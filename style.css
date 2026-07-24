@@ -330,3 +330,11 @@ button:active {
     top:220px;
 
 }
+
+/* TEMP TEST */
+
+#investigation-screen.active {
+
+    display:block;
+
+}
