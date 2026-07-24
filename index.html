@@ -60,51 +60,67 @@
     <!-- Investigation Screen -->
     <section id="investigation-screen" class="screen">
 
-        <h2>SCIENCE LAB</h2>
+      <!-- Investigation Screen -->
+<section id="investigation-screen" class="screen">
 
-        <p>
-            Click around the lab to collect evidence.
-        </p>
+    <h2>SCIENCE LAB EVIDENCE BOARD</h2>
+
+    <p>
+        Examine the scene carefully.
+        Good detectives observe before they conclude.
+    </p>
 
 
-        <div class="lab">
+    <div class="evidence-board">
 
-            <button onclick="showClue('footprints')">
-                👣<br>
-                Footprints
-            </button>
+        <div class="scene">
 
-            <button onclick="showClue('puddle')">
-                💧<br>
-                Water Puddle
-            </button>
+            <div class="hotspot footprints"
+                 onclick="showClue('footprints')">
+                👣
+            </div>
 
-            <button onclick="showClue('window')">
-                🪟<br>
-                Open Window
-            </button>
 
-            <button onclick="showClue('beaker')">
-                🧪<br>
-                Broken Beaker
-            </button>
+            <div class="hotspot beaker"
+                 onclick="showClue('beaker')">
+                🧪
+            </div>
+
+
+            <div class="hotspot window"
+                 onclick="showClue('window')">
+                🪟
+            </div>
+
+
+            <div class="hotspot paw"
+                 onclick="showClue('paw')">
+                🐾
+            </div>
 
         </div>
 
 
         <div id="clue-box">
-            <h3>Evidence Notebook</h3>
+
+            <h3>Detective Notebook</h3>
 
             <p id="clue-text">
-                No evidence collected yet.
+                Click evidence on the board to investigate.
             </p>
 
         </div>
 
 
-        <button onclick="makeConclusion()">
-            Make Investigation Report
-        </button>
+    </div>
+
+
+    <button onclick="makeConclusion()">
+        Submit Investigation Report
+    </button>
+
+
+</section>
 
     </section>
 
