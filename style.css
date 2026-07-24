@@ -1,38 +1,7 @@
-/* SCIENCE DETECTIVE ACADEMY */
-/* Retro Pixel Detective Theme */
+/* SCIENCE DETECTIVE ACADEMY STYLE */
 
 
-/* GENERAL */
-
-body {
-
-    background:#111827;
-
-    color:white;
-
-    font-family:"Courier New", monospace;
-
-    text-align:center;
-
-    margin:0;
-
-    padding:20px;
-
-}
-
-
-#game {
-
-    max-width:900px;
-
-    margin:auto;
-
-}
-
-
-
-
-/* SCREEN SYSTEM */
+/* SCREEN MANAGEMENT */
 
 .screen {
 
@@ -51,64 +20,73 @@ body {
 
 
 
-/* HEADINGS */
+/* GENERAL PAGE STYLE */
+
+body {
+
+    background:#111827;
+
+    color:white;
+
+    font-family:"Courier New", monospace;
+
+    text-align:center;
+
+    margin:0;
+
+    padding:20px;
+
+}
+
+
 
 h1 {
 
     color:#facc15;
 
-    font-size:45px;
+    letter-spacing:2px;
 
 }
+
 
 
 h2 {
 
-    color:#c084fc;
+    color:#93c5fd;
 
 }
 
 
-h3 {
-
-    color:#facc15;
-
-}
-
-
-
-
-
-/* BUTTONS */
 
 button {
 
-    background:#7c3aed;
+    background:#2563eb;
 
     color:white;
 
-    border:3px solid #facc15;
+    border:none;
 
-    padding:15px 25px;
+    padding:12px 20px;
 
     margin:10px;
 
-    font-size:18px;
+    border-radius:8px;
 
-    font-family:inherit;
+    font-size:16px;
+
+    font-family:"Courier New", monospace;
 
     cursor:pointer;
 
-    box-shadow:5px 5px 0px black;
-
 }
+
 
 
 button:hover {
 
-    background:#a855f7;
+    background:#1d4ed8;
 
-    transform:translateY(-3px);
+    transform:scale(1.05);
 
 }
 
@@ -116,33 +94,21 @@ button:hover {
 
 
 
-/* STORY BOXES */
+/* CASE BOXES */
 
 .case-box {
 
     background:#1f2937;
 
-    border:4px solid #c084fc;
+    border:3px solid #374151;
 
-    padding:25px;
+    border-radius:12px;
 
-    margin:25px auto;
+    padding:20px;
 
-    max-width:650px;
+    max-width:700px;
 
-    box-shadow:8px 8px 0px black;
-
-}
-
-
-
-
-
-/* DETECTIVE ICON */
-
-.detective {
-
-    font-size:80px;
+    margin:20px auto;
 
 }
 
@@ -168,17 +134,31 @@ button:hover {
 
     position:relative;
 
-    width:700px;
+}
 
-    height:400px;
 
-    background:#374151;
 
-    border:8px solid #facc15;
 
-    box-shadow:10px 10px 0px black;
 
-    margin:25px auto;
+/* CLASSROOM */
+
+.classroom {
+
+    position:relative;
+
+    width:750px;
+
+    height:500px;
+
+    margin:20px auto;
+
+    background:#d1d5db;
+
+    border:8px solid #374151;
+
+    border-radius:15px;
+
+    overflow:hidden;
 
 }
 
@@ -186,32 +166,270 @@ button:hover {
 
 
 
-/* CLUE OBJECTS */
+/* TEACHER DESK */
+
+.teacher-station {
+
+    position:absolute;
+
+    top:25px;
+
+    left:280px;
+
+    width:190px;
+
+    height:55px;
+
+    background:#92400e;
+
+    border-radius:8px;
+
+}
+
+
+
+
+
+/* CABINETS */
+
+.cabinet {
+
+    position:absolute;
+
+    background:#6b7280;
+
+    width:60px;
+
+    height:180px;
+
+}
+
+
+
+.cabinet1 {
+
+    left:20px;
+
+    top:90px;
+
+}
+
+
+
+.cabinet2 {
+
+    right:20px;
+
+    top:90px;
+
+}
+
+
+
+
+
+/* LAB TABLES */
+
+.lab-table {
+
+    position:absolute;
+
+    background:#a16207;
+
+    width:120px;
+
+    height:70px;
+
+    border-radius:12px;
+
+}
+
+
+
+.table1 {
+
+    top:160px;
+
+    left:120px;
+
+}
+
+
+
+.table2 {
+
+    top:160px;
+
+    left:315px;
+
+}
+
+
+
+.table3 {
+
+    top:160px;
+
+    left:510px;
+
+}
+
+
+
+
+
+/* STUDENT DESKS */
+
+.student-desk {
+
+    position:absolute;
+
+    width:65px;
+
+    height:40px;
+
+    background:#f59e0b;
+
+    border-radius:5px;
+
+}
+
+
+
+.desk1 {
+
+    left:150px;
+
+    top:320px;
+
+}
+
+
+.desk2 {
+
+    left:260px;
+
+    top:320px;
+
+}
+
+
+.desk3 {
+
+    left:370px;
+
+    top:320px;
+
+}
+
+
+.desk4 {
+
+    left:480px;
+
+    top:320px;
+
+}
+
+
+.desk5 {
+
+    left:210px;
+
+    top:400px;
+
+}
+
+
+.desk6 {
+
+    left:420px;
+
+    top:400px;
+
+}
+
+
+
+
+
+/* SINK */
+
+.sink {
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:30px;
+
+    width:100px;
+
+    height:40px;
+
+    background:#9ca3af;
+
+    border-radius:8px;
+
+}
+
+
+
+
+
+/* WINDOW */
+
+.window-wall {
+
+    position:absolute;
+
+    top:20px;
+
+    right:80px;
+
+    width:120px;
+
+    height:30px;
+
+    background:#60a5fa;
+
+    border-radius:8px;
+
+}
+
+
+
+
+
+/* CLUE HOTSPOTS */
 
 .hotspot {
 
     position:absolute;
 
-    font-size:50px;
+    width:45px;
+
+    height:45px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:35px;
 
     cursor:pointer;
 
-    background:#1f2937;
-
-    border:3px solid #c084fc;
-
-    padding:10px;
-
-    z-index:10;
+    transition:.2s;
 
 }
 
 
+
 .hotspot:hover {
 
-    transform:scale(1.2);
-
-    background:#7c3aed;
+    transform:scale(1.3);
 
 }
 
@@ -223,9 +441,9 @@ button:hover {
 
 .footprints {
 
-    left:80px;
+    top:260px;
 
-    bottom:80px;
+    left:280px;
 
 }
 
@@ -233,9 +451,9 @@ button:hover {
 
 .beaker {
 
-    right:170px;
+    top:145px;
 
-    bottom:100px;
+    left:350px;
 
 }
 
@@ -243,9 +461,9 @@ button:hover {
 
 .window {
 
-    right:80px;
+    top:60px;
 
-    top:50px;
+    right:130px;
 
 }
 
@@ -253,9 +471,9 @@ button:hover {
 
 .paw {
 
-    left:330px;
+    top:230px;
 
-    top:220px;
+    right:180px;
 
 }
 
@@ -263,35 +481,21 @@ button:hover {
 
 
 
-/* NOTEBOOK */
+/* CLUE DISPLAY BOX */
 
 #clue-box {
 
-    background:#111827;
+    background:#1f2937;
 
-    border:3px solid #facc15;
+    border:3px solid #374151;
 
-    padding:20px;
+    border-radius:10px;
 
-    max-width:650px;
+    padding:15px;
 
-    min-height:150px;
+    width:500px;
 
-}
-
-
-
-
-
-/* REPORT ANSWERS */
-
-#report-screen button {
-
-    display:block;
-
-    width:70%;
-
-    margin:15px auto;
+    margin:20px auto;
 
 }
 
@@ -299,393 +503,38 @@ button:hover {
 
 
 
-/* DEDUCTION ANSWERS */
+/* NOTEBOOK BOX */
 
-#deduction-screen button {
+#notebook-box {
 
-    display:block;
+    background:#374151;
 
-    width:70%;
+    padding:15px;
 
-    margin:15px auto;
+    border-radius:10px;
+
+    margin-top:20px;
 
 }
 
 
 
-
-
-/* MOBILE */
-
-@media(max-width:750px){
-
-
-.scene {
+textarea {
 
     width:90%;
 
-}
-
-
-}
-/* Evidence placement fixes */
-
-.scene {
-    position: relative;
-}
-
-
-.hotspot {
-    position: absolute !important;
-}
-
-
-.hotspot.footprints {
-    left: 60px !important;
-    bottom: 60px !important;
-}
-
-
-.hotspot.beaker {
-    right: 180px !important;
-    bottom: 80px !important;
-}
-
-
-.hotspot.window {
-    right: 60px !important;
-    top: 40px !important;
-}
-
-
-.hotspot.paw {
-    left: 320px !important;
-    top: 220px !important;
-}
-
-/* TOP DOWN CLASSROOM */
-
-.classroom {
-
-position:relative;
-
-width:750px;
-
-height:500px;
-
-margin:auto;
-
-background:#e5e7eb;
-
-border:6px solid #1f2937;
-
-border-radius:12px;
-
-overflow:hidden;
+    height:100px;
 
 }
 
 
 
-/* teacher area */
 
-.teacher-station {
 
-position:absolute;
+/* DETECTIVE ICON */
 
-top:25px;
+.detective {
 
-left:280px;
-
-width:190px;
-
-height:50px;
-
-background:#92400e;
-
-border-radius:8px;
-
-}
-
-
-
-/* cabinets */
-
-.cabinet {
-
-position:absolute;
-
-background:#6b7280;
-
-width:60px;
-
-height:180px;
-
-}
-
-
-.cabinet1 {
-
-left:20px;
-
-top:80px;
-
-}
-
-
-.cabinet2 {
-
-right:20px;
-
-top:80px;
-
-}
-
-
-
-/* lab tables */
-
-
-.lab-table {
-
-position:absolute;
-
-background:#b45309;
-
-width:120px;
-
-height:70px;
-
-border-radius:12px;
-
-}
-
-
-
-.table1 {
-
-top:160px;
-
-left:120px;
-
-}
-
-
-.table2 {
-
-top:160px;
-
-left:315px;
-
-}
-
-
-.table3 {
-
-top:160px;
-
-left:510px;
-
-}
-
-
-
-/* student desks */
-
-
-.student-desk {
-
-position:absolute;
-
-width:65px;
-
-height:40px;
-
-background:#f59e0b;
-
-border-radius:5px;
-
-}
-
-
-
-.desk1 {
-
-left:150px;
-
-top:320px;
-
-}
-
-
-.desk2 {
-
-left:260px;
-
-top:320px;
-
-}
-
-
-.desk3 {
-
-left:370px;
-
-top:320px;
-
-}
-
-
-.desk4 {
-
-left:480px;
-
-top:320px;
-
-}
-
-
-.desk5 {
-
-left:210px;
-
-top:400px;
-
-}
-
-
-.desk6 {
-
-left:420px;
-
-top:400px;
-
-}
-
-
-
-/* sink */
-
-
-.sink {
-
-position:absolute;
-
-bottom:20px;
-
-left:30px;
-
-width:100px;
-
-height:40px;
-
-background:#9ca3af;
-
-border-radius:8px;
-
-}
-
-
-
-/* windows */
-
-
-.window-wall {
-
-position:absolute;
-
-top:20px;
-
-right:80px;
-
-width:120px;
-
-height:30px;
-
-background:#60a5fa;
-
-border-radius:8px;
-
-}
-
-
-
-/* evidence markers */
-
-
-.hotspot {
-
-position:absolute;
-
-width:45px;
-
-height:45px;
-
-border-radius:50%;
-
-background:#ef4444;
-
-color:white;
-
-font-size:25px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-cursor:pointer;
-
-border:3px solid white;
-
-box-shadow:0 0 8px black;
-
-}
-
-
-.hotspot:hover {
-
-transform:scale(1.15);
-
-}
-
-
-
-/* clue locations */
-
-
-.footprints {
-
-top:260px;
-
-left:280px;
-
-}
-
-
-.beaker {
-
-top:145px;
-
-left:350px;
-
-}
-
-
-.window {
-
-top:60px;
-
-right:130px;
-
-}
-
-
-.paw {
-
-top:230px;
-
-right:180px;
+    font-size:80px;
 
 }
