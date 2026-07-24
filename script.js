@@ -393,3 +393,15 @@ function finishCase(){
 showScreen("ending-screen");
 
 }
+
+// RESTART GAME
+
+function restartGame(){
+
+    cluesFound = [];
+
+    currentChallenge = 0;
+
+    showScreen("title-screen");
+
+}
