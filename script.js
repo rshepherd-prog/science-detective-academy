@@ -225,7 +225,7 @@ correct:0,
 
 notebook:
 
-"Explain why this is deductive reasoning."
+"Notebook Question: Explain why this is deductive reasoning."
 
 },
 
@@ -253,8 +253,7 @@ answers:[
 correct:0,
 
 notebook:
-
-"Explain how you used a rule to reach a conclusion."
+"Notebook Question: Describe the rule you started with and how it helped you reach a conclusion."
 
 },
 
@@ -282,8 +281,7 @@ answers:[
 correct:0,
 
 notebook:
-
-"Why is this logical reasoning instead of guessing?"
+"Notebook Question: Explain why this conclusion is based on logic rather than a guess."
 
 }
 
