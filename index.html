@@ -30,7 +30,6 @@ Science Detective Academy: Case 001
 SCIENCE DETECTIVE ACADEMY
 </h1>
 
-
 <h2>
 CASE FILE 001
 </h2>
@@ -45,13 +44,12 @@ CASE FILE 001
 
 <p>
 A valuable science lab beaker has shattered.
-Several people were nearby.
 </p>
 
 
 <p>
 Your mission:
-Investigate the evidence and determine what happened.
+Collect evidence, build an explanation, and discover the difference between two types of reasoning.
 </p>
 
 </div>
@@ -70,17 +68,17 @@ START INVESTIGATION
 
 <!-- INTRO SCREEN -->
 
+
 <section id="intro-screen" class="screen">
 
 
 <div class="detective">
-
 🕵️
-
 </div>
 
 
 <div class="dialogue">
+
 
 <h3>
 Detective Pixel
@@ -91,20 +89,25 @@ Detective Pixel
 
 Welcome, rookie detective.
 
-Your first assignment is the Science Lab Incident.
+A science lab accident has occurred.
 
-A beaker has shattered, and we need to determine what happened.
+Your job is to investigate the evidence and determine what happened.
 
 Remember:
 
-Good detectives observe evidence before making conclusions.
+Observations are what we see.
+
+Explanations are what we think the evidence means.
+
+Good detectives know the difference.
 
 </p>
 
 
+
 <button onclick="beginInvestigation()">
 
-Continue
+ENTER THE LAB
 
 </button>
 
@@ -120,7 +123,7 @@ Continue
 
 
 
-<!-- INVESTIGATION SCREEN -->
+<!-- EVIDENCE BOARD -->
 
 
 <section id="investigation-screen" class="screen">
@@ -133,14 +136,11 @@ SCIENCE LAB EVIDENCE BOARD
 
 <p>
 
-Examine the scene carefully.
-
 Click evidence to collect observations.
 
 Do not jump to conclusions yet!
 
 </p>
-
 
 
 
@@ -158,14 +158,12 @@ onclick="showClue('footprints')">
 </div>
 
 
-
 <div class="hotspot beaker"
 onclick="showClue('beaker')">
 
 🧪
 
 </div>
-
 
 
 <div class="hotspot window"
@@ -176,14 +174,12 @@ onclick="showClue('window')">
 </div>
 
 
-
 <div class="hotspot paw"
 onclick="showClue('paw')">
 
 🐾
 
 </div>
-
 
 
 </div>
@@ -193,7 +189,6 @@ onclick="showClue('paw')">
 
 <div id="clue-box">
 
-
 <h3>
 Detective Notebook
 </h3>
@@ -201,7 +196,7 @@ Detective Notebook
 
 <p id="clue-text">
 
-Click evidence on the board to investigate.
+Click evidence on the board.
 
 </p>
 
@@ -214,13 +209,11 @@ Click evidence on the board to investigate.
 
 
 
-
 <button onclick="makeConclusion()">
 
-Submit Investigation Report
+CREATE DETECTIVE REPORT
 
 </button>
-
 
 
 </section>
@@ -231,17 +224,15 @@ Submit Investigation Report
 
 
 
+<!-- INDUCTIVE REPORT SCREEN -->
 
-<!-- INDUCTIVE REASONING SCREEN -->
 
-
-<section id="reasoning-screen" class="screen">
+<section id="report-screen" class="screen">
 
 
 <h2>
-Investigation Complete
+DETECTIVE REPORT
 </h2>
-
 
 
 <div class="case-box">
@@ -249,10 +240,63 @@ Investigation Complete
 
 <p>
 
-You collected observations and looked for patterns.
+You collected evidence.
+
+Now decide:
 
 </p>
 
+
+<h3>
+
+What probably happened?
+
+</h3>
+
+
+<button onclick="chooseExplanation('wind')">
+
+🌬️ Wind from the window knocked it over
+
+</button>
+
+
+<button onclick="chooseExplanation('student')">
+
+👟 A student accidentally bumped the table
+
+</button>
+
+
+<button onclick="chooseExplanation('cat')">
+
+🐈 Professor Whiskers knocked it over
+
+</button>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- INDUCTIVE EXPLANATION -->
+
+
+<section id="inductive-screen" class="screen">
+
+
+<h2>
+DETECTIVE SKILL UNLOCKED
+</h2>
+
+
+<div class="case-box">
 
 
 <h1>
@@ -262,7 +306,7 @@ INDUCTIVE REASONING
 
 <p>
 
-Inductive reasoning uses observations and evidence to create a likely explanation.
+You looked at specific observations and created the most likely explanation.
 
 </p>
 
@@ -276,22 +320,86 @@ Evidence → Pattern → Explanation
 
 <p>
 
-Your conclusion is reasonable, but it is not guaranteed to be correct.
+Your conclusion was reasonable...
+
+but it was not guaranteed.
 
 </p>
 
 
 
+<button onclick="showCatReveal()">
+
+VIEW NEW EVIDENCE
+
+</button>
+
+
 </div>
 
+
+</section>
+<!-- CAT REVEAL SCREEN -->
+
+
+<section id="cat-screen" class="screen">
+
+
+<h2>
+🚨 NEW EVIDENCE FOUND
+</h2>
+
+
+<div class="case-box">
+
+
+<h1>
+🐈 Professor Whiskers
+</h1>
+
+
+<p>
+
+Security camera footage reveals the truth!
+
+</p>
+
+
+<p>
+
+Professor Whiskers jumped onto the supply cart.
+
+The cart rolled into the lab table.
+
+The beaker fell and shattered.
+
+</p>
+
+
+<p>
+
+Your original explanation made sense...
+
+but new evidence changed the conclusion.
+
+</p>
+
+
+<h2>
+
+This is why inductive reasoning is not always certain.
+
+</h2>
 
 
 <button onclick="startDeduction()">
 
-Try Deductive Reasoning
+ENTER LOGIC LAB
 
 </button>
 
+
+</div>
 
 
 </section>
@@ -303,44 +411,56 @@ Try Deductive Reasoning
 
 
 
-<!-- DEDUCTIVE SCREEN -->
+<!-- DEDUCTIVE REASONING SCREEN -->
 
 
 <section id="deduction-screen" class="screen">
 
 
 <h2>
-Deduction Challenge
+🧠 LOGIC LAB
 </h2>
-
 
 
 <div class="case-box">
 
 
 <p>
-Detective Pixel gives you a rule:
+
+Now we solve mysteries differently.
+
+Instead of collecting clues, we start with rules.
+
+</p>
+
+
+<h3>
+
+Challenge 1
+
+</h3>
+
+
+<p>
+
+<strong>
+RULE:
+</strong>
+
+All objects with mass are affected by gravity.
+
 </p>
 
 
 <p>
 
 <strong>
-
-Objects dropped near Earth fall downward.
-
+FACT:
 </strong>
 
-</p>
-
-
-
-<p>
-
-The beaker was dropped.
+The beaker has mass.
 
 </p>
-
 
 
 <p>
@@ -350,26 +470,23 @@ What can you conclude?
 </p>
 
 
+<button onclick="deductionQuestion(true)">
+
+The beaker is affected by gravity.
+
+</button>
+
+
+
+<button onclick="deductionQuestion(false)">
+
+The beaker must have broken because of gravity.
+
+</button>
+
+
+
 </div>
-
-
-
-
-<button onclick="deductionAnswer(true)">
-
-The beaker fell downward
-
-</button>
-
-
-
-
-<button onclick="deductionAnswer(false)">
-
-The beaker was broken intentionally
-
-</button>
-
 
 
 </section>
@@ -381,7 +498,68 @@ The beaker was broken intentionally
 
 
 
-<!-- END SCREEN -->
+<!-- DEDUCTIVE EXPLANATION -->
+
+
+<section id="deductive-screen" class="screen">
+
+
+<h2>
+DETECTIVE SKILL UNLOCKED
+</h2>
+
+
+<div class="case-box">
+
+
+<h1>
+DEDUCTIVE REASONING
+</h1>
+
+
+<p>
+
+You started with a rule and applied it to a specific case.
+
+</p>
+
+
+<p>
+
+Rule → Evidence → Conclusion
+
+</p>
+
+
+<p>
+
+When the rule is true and the evidence matches, the conclusion must follow.
+
+</p>
+
+
+
+<button onclick="finishCase()">
+
+COMPLETE CASE FILE
+
+</button>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- FINAL SCREEN -->
 
 
 <section id="ending-screen" class="screen">
@@ -397,45 +575,71 @@ The beaker was broken intentionally
 
 
 <h2>
-Detective Rank:
+Detective Report
 </h2>
 
 
-<h1>
-Science Sleuth
-</h1>
+<p>
+
+You learned two ways scientists reason.
+
+</p>
+
+
+
+<h3>
+🔍 Inductive Reasoning
+</h3>
 
 
 <p>
 
-You learned:
+Observations → Pattern → Likely Explanation
 
 </p>
 
 
 <p>
 
-🔍 Inductive Reasoning:
+Used when we look for patterns and make predictions.
 
-Evidence → Pattern → Likely Explanation
+</p>
+
+
+
+
+<h3>
+📋 Deductive Reasoning
+</h3>
+
+
+<p>
+
+Rule → Specific Evidence → Certain Conclusion
 
 </p>
 
 
 <p>
 
-📋 Deductive Reasoning:
-
-Rule → Evidence → Conclusion
+Used when we apply known rules to specific situations.
 
 </p>
 
+
+
+<h2>
+
+Rank: Science Sleuth 🕵️
+
+</h2>
 
 
 </div>
 
 
 </section>
+
 
 
 
