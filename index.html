@@ -406,6 +406,7 @@ ENTER LOGIC LAB
 
 
 <!-- DEDUCTION LAB -->
+<!-- LOGIC LAB -->
 
 <section id="deduction-screen" class="screen">
 
@@ -419,27 +420,26 @@ ENTER LOGIC LAB
 
 
 <h3 id="challenge-title">
-Challenge 1
+Challenge
 </h3>
 
 
 <p id="challenge-text">
-
+Loading challenge...
 </p>
 
 
-<button onclick="deductionAnswer(0)">
 
+<button id="answer-one" onclick="deductionAnswer(0)">
 Answer A
-
 </button>
 
 
-<button onclick="deductionAnswer(1)">
 
+<button id="answer-two" onclick="deductionAnswer(1)">
 Answer B
-
 </button>
+
 
 
 <p id="logic-feedback">
@@ -447,11 +447,50 @@ Answer B
 </p>
 
 
-<button id="next-button" onclick="nextChallenge()" style="display:none;">
 
-NEXT CHALLENGE
+
+
+<!-- NOTEBOOK POP UP -->
+
+
+<div id="notebook-box" style="display:none;">
+
+
+<h3>
+📓 Detective Notebook
+</h3>
+
+
+<p>
+Record your reasoning before continuing:
+</p>
+
+
+<p id="notebook-question">
+
+</p>
+
+
+
+<textarea id="notebook-answer"
+placeholder="Write your explanation here...">
+</textarea>
+
+
+
+<br><br>
+
+
+
+<button onclick="continueChallenge()">
+
+SUBMIT NOTEBOOK ENTRY
 
 </button>
+
+
+</div>
+
 
 
 </div>
@@ -459,50 +498,7 @@ NEXT CHALLENGE
 
 </section>
 
-
-
-
-
-<!-- DEDUCTIVE EXPLANATION -->
-
-<section id="deductive-screen" class="screen">
-
-
-<h2>
-DEDUCTIVE REASONING
-</h2>
-
-
-<div class="case-box">
-
-
-<p>
-
-You started with a rule and applied it to a specific situation.
-
-</p>
-
-
-<p>
-
-<strong>
-Rule → Evidence → Certain Conclusion
-</strong>
-
-</p>
-
-
-
-<button onclick="finishCase()">
-
-COMPLETE CASE FILE
-
-</button>
-
-
-</div>
-
-
+  
 </section>
 
 
