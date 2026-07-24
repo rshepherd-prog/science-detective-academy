@@ -4,10 +4,7 @@
 
 let cluesFound = [];
 
-let studentExplanation = "";
-
 let currentChallenge = 0;
-
 
 
 // SCREEN MANAGEMENT
@@ -23,17 +20,15 @@ function showScreen(screenID){
     });
 
 
-    let target = document.getElementById(screenID);
+    let screen = document.getElementById(screenID);
 
-    if(target){
+    if(screen){
 
-        target.classList.add("active");
+        screen.classList.add("active");
 
     }
 
 }
-
-
 
 
 
@@ -47,8 +42,6 @@ function startGame(){
 
 
 
-
-
 // ENTER LAB
 
 function beginInvestigation(){
@@ -59,64 +52,52 @@ function beginInvestigation(){
 
 
 
-
-
 // EVIDENCE DATABASE
 
 const clues = {
 
-
 footprints: {
 
-title:"👣 Evidence #1: Muddy Footprints",
+title:"👣 Muddy Footprints",
 
 text:"Muddy footprints lead toward the lab table."
 
 },
 
 
-
 beaker: {
 
-title:"🧪 Evidence #2: Broken Beaker",
+title:"🧪 Broken Beaker",
 
 text:"A glass beaker is shattered on the floor."
 
 },
 
 
-
 window: {
 
-title:"🪟 Evidence #3: Open Window",
+title:"🪟 Open Window",
 
 text:"The classroom window is open during a storm."
 
 },
 
 
-
 paw: {
 
-title:"🐾 Evidence #4: Tiny Paw Prints",
+title:"🐾 Tiny Paw Prints",
 
 text:"Small paw prints appear near the equipment shelf."
 
 }
 
-
 };
 
 
 
-
-
-
-
-// DISPLAY CLUE
+// SHOW CLUES
 
 function showClue(clueName){
-
 
 let clue = clues[clueName];
 
@@ -142,10 +123,7 @@ clue.text;
 
 
 
-
-
-
-// MOVE TO EXPLANATION
+// MOVE TO REPORT
 
 function makeConclusion(){
 
@@ -157,13 +135,13 @@ document.getElementById("clue-text").innerHTML =
 
 "🕵️ Detective Pixel says:<br><br>" +
 
-"Collect at least three clues before making your explanation.";
+"Collect at least three clues first.";
 
 
 return;
 
-}
 
+}
 
 
 showScreen("report-screen");
@@ -174,95 +152,19 @@ showScreen("report-screen");
 
 
 
-
-
-
-
-// STUDENT CHOOSES WHAT HAPPENED
+// STUDENT CHOOSES EXPLANATION
 
 function chooseExplanation(choice){
 
-    alert("Button clicked: " + choice);
-
-}
+console.log("Student explanation:", choice);
 
 
+// move to inductive reasoning lesson
 
-let message = document.getElementById("reasoning-feedback");
-
-
-if(message){
-
-
-message.innerHTML =
-
-"Good detective work! Now identify the type of reasoning you used.";
+showScreen("inductive-screen");
 
 
 }
-
-
-
-}
-
-
-
-
-
-
-
-
-// STUDENT IDENTIFIES REASONING TYPE
-
-function chooseReasoning(choice){
-
-
-let feedback = document.getElementById("reasoning-feedback");
-
-
-
-if(choice === "inductive"){
-
-
-feedback.innerHTML =
-
-"✅ Correct!<br><br>" +
-
-"You used inductive reasoning because you started with specific evidence and created a possible explanation.<br><br>" +
-
-"Your conclusion is likely, but it is not guaranteed.";
-
-
-
-setTimeout(function(){
-
-showScreen("cat-screen");
-
-},3000);
-
-
-
-}
-
-
-else{
-
-
-feedback.innerHTML =
-
-"❌ Not quite!<br><br>" +
-
-"You started with evidence and created an explanation. That is inductive reasoning, not deductive reasoning.";
-
-
-}
-
-
-}
-
-
-
-
 
 
 
@@ -278,10 +180,23 @@ showScreen("cat-screen");
 
 
 
+// START DEDUCTION
+
+function startDeduction(){
+
+currentChallenge = 0;
+
+loadChallenge();
+
+showScreen("deduction-screen");
+
+}
 
 
 
-// DEDUCTION LAB
+
+
+// DEDUCTIVE QUESTIONS
 
 
 const deductionChallenges = [
@@ -308,10 +223,11 @@ answers:[
 
 correct:0,
 
-notebook:"Explain why this is deductive reasoning."
+notebook:
+
+"Explain why this is deductive reasoning."
 
 },
-
 
 
 {
@@ -336,10 +252,11 @@ answers:[
 
 correct:0,
 
-notebook:"How did you move from a general rule to a specific conclusion?"
+notebook:
+
+"Explain how you used a rule to reach a conclusion."
 
 },
-
 
 
 {
@@ -364,29 +281,13 @@ answers:[
 
 correct:0,
 
-notebook:"Why is this logic instead of guessing?"
+notebook:
+
+"Why is this logical reasoning instead of guessing?"
 
 }
 
 ];
-
-
-
-
-
-
-
-function startDeduction(){
-
-currentChallenge = 0;
-
-loadChallenge();
-
-showScreen("deduction-screen");
-
-}
-
-
 
 
 
@@ -413,16 +314,10 @@ document.getElementById("answer-two").innerHTML = challenge.answers[1];
 document.getElementById("logic-feedback").innerHTML = "";
 
 
-if(document.getElementById("notebook-box")){
-
 document.getElementById("notebook-box").style.display="none";
 
-}
-
 
 }
-
-
 
 
 
@@ -439,7 +334,7 @@ if(answer === challenge.correct){
 
 document.getElementById("logic-feedback").innerHTML =
 
-"✅ Correct! You started with a general rule and applied it to a specific example. This is deductive reasoning.";
+"✅ Correct! You started with a general rule and applied it to a specific situation. That is deductive reasoning.";
 
 
 document.getElementById("notebook-question").innerHTML = challenge.notebook;
@@ -450,22 +345,18 @@ document.getElementById("notebook-box").style.display="block";
 
 }
 
-
 else{
 
 
 document.getElementById("logic-feedback").innerHTML =
 
-"❌ Try again. Deductive reasoning starts with a general rule.";
+"❌ Try again. Deductive reasoning begins with a general rule.";
 
 
 }
 
 
 }
-
-
-
 
 
 
@@ -478,13 +369,17 @@ currentChallenge++;
 
 if(currentChallenge < deductionChallenges.length){
 
+
 loadChallenge();
+
 
 }
 
 else{
 
-showScreen("deductive-screen");
+
+showScreen("ending-screen");
+
 
 }
 
@@ -494,10 +389,6 @@ showScreen("deductive-screen");
 
 
 
-
-
-
-// FINISH
 
 function finishCase(){
 
