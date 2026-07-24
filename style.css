@@ -219,3 +219,114 @@ button:active {
     }
 
 }
+
+/* Evidence Board */
+
+
+.evidence-board {
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+
+
+.scene {
+
+    position:relative;
+
+    width:700px;
+
+    height:400px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #374151,
+        #111827
+    );
+
+    border:8px solid #facc15;
+
+    box-shadow:
+    10px 10px 0px black;
+
+    margin:20px;
+
+}
+
+
+
+/* Evidence hotspots */
+
+
+.hotspot {
+
+    position:absolute;
+
+    font-size:45px;
+
+    cursor:pointer;
+
+    background:#1f2937;
+
+    border:3px solid #c084fc;
+
+    padding:10px;
+
+    transition:.2s;
+
+}
+
+
+.hotspot:hover {
+
+    transform:scale(1.2);
+
+    background:#7c3aed;
+
+}
+
+
+
+/* Position evidence */
+
+.footprints {
+
+    left:80px;
+
+    bottom:70px;
+
+}
+
+
+.beaker {
+
+    right:150px;
+
+    bottom:90px;
+
+}
+
+
+.window {
+
+    right:80px;
+
+    top:40px;
+
+}
+
+
+.paw {
+
+    left:300px;
+
+    top:220px;
+
+}
