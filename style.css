@@ -1,19 +1,10 @@
-/* SCIENCE DETECTIVE ACADEMY */
-/* Retro Pixel Detective Theme */
-
-
 body {
 
     background:#111827;
-
     color:white;
-
     font-family:"Courier New", monospace;
-
     text-align:center;
-
     margin:0;
-
     padding:20px;
 
 }
@@ -22,11 +13,9 @@ body {
 #game {
 
     max-width:900px;
-
     margin:auto;
 
 }
-
 
 
 
@@ -47,14 +36,11 @@ body {
 
 
 
-
-/* HEADINGS */
-
+/* TEXT */
 
 h1 {
 
     color:#facc15;
-
     font-size:45px;
 
 }
@@ -75,29 +61,18 @@ h3 {
 
 
 
-
-
 /* BUTTONS */
-
 
 button {
 
     background:#7c3aed;
-
     color:white;
-
     border:3px solid #facc15;
-
     padding:15px 25px;
-
     margin:10px;
-
     font-size:18px;
-
     font-family:inherit;
-
     cursor:pointer;
-
     box-shadow:5px 5px black;
 
 }
@@ -113,21 +88,15 @@ button:hover {
 
 
 
-/* STORY BOXES */
-
+/* BOXES */
 
 .case-box {
 
     background:#1f2937;
-
     border:4px solid #c084fc;
-
     padding:25px;
-
     margin:25px auto;
-
     max-width:650px;
-
     box-shadow:8px 8px black;
 
 }
@@ -135,29 +104,12 @@ button:hover {
 
 
 
-
-/* DETECTIVE */
-
-
-.detective {
-
-    font-size:80px;
-
-}
-
-
-
-
-
 /* EVIDENCE BOARD */
-
 
 .evidence-board {
 
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
 
 }
@@ -166,17 +118,11 @@ button:hover {
 .scene {
 
     position:relative;
-
     width:700px;
-
     height:400px;
-
     background:#374151;
-
     border:8px solid #facc15;
-
     box-shadow:10px 10px black;
-
     margin:25px auto;
 
 }
@@ -185,70 +131,57 @@ button:hover {
 
 
 
-/* EVIDENCE ITEMS */
-
+/* CLUES */
 
 .hotspot {
 
     position:absolute;
-
     font-size:50px;
-
     cursor:pointer;
-
     background:#1f2937;
-
     border:3px solid #c084fc;
-
     padding:10px;
+    z-index:5;
 
 }
 
 
 .hotspot:hover {
 
-    transform:scale(1.15);
+    transform:scale(1.2);
+    background:#7c3aed;
 
 }
-
-
 
 
 
 .footprints {
 
     left:80px;
-
     bottom:80px;
 
 }
 
 
-
 .beaker {
 
     right:170px;
-
     bottom:100px;
 
 }
 
 
-
 .window {
 
     right:80px;
-
     top:50px;
 
 }
 
 
-
 .paw {
 
     left:330px;
-
     top:220px;
 
 }
@@ -256,52 +189,38 @@ button:hover {
 
 
 
-
 /* NOTEBOOK */
-
 
 #clue-box {
 
     background:#111827;
-
     border:3px solid #facc15;
-
     padding:20px;
-
     max-width:650px;
-
     min-height:150px;
 
 }
 
 
 
-
-/* REPORT BUTTONS */
-
+/* REPORT */
 
 #report-screen button {
 
     display:block;
-
-    width:70%;
-
     margin:15px auto;
+    width:70%;
 
 }
 
 
 
-
-/* LOGIC LAB */
-
+/* LOGIC */
 
 #deduction-screen button {
 
     display:block;
-
-    width:70%;
-
     margin:15px auto;
+    width:70%;
 
 }
