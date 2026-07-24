@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Detective Academy: Case 001</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="game">
+
+    <!-- Title Screen -->
+    <section id="title-screen" class="screen active">
+
+        <h1>SCIENCE DETECTIVE ACADEMY</h1>
+        <h2>CASE FILE 001</h2>
+
+        <div class="case-box">
+            <h3>🧪 THE BROKEN BEAKER</h3>
+            <p>
+                A valuable science lab beaker has shattered.
+                Several people were nearby.
+            </p>
+
+            <p>
+                Your mission:
+                Investigate the evidence and determine what happened.
+            </p>
+        </div>
+
+        <button onclick="startGame()">START INVESTIGATION</button>
+
+    </section>
+
+
+    <!-- Detective Introduction -->
+    <section id="intro-screen" class="screen">
+
+        <div class="detective">
+            🕵️
+        </div>
+
+        <div class="dialogue">
+            <h3>Detective Pixel</h3>
+
+            <p id="intro-text">
+                Welcome, rookie detective.
+            </p>
+
+            <button onclick="beginInvestigation()">
+                Continue
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- Investigation Screen -->
+    <section id="investigation-screen" class="screen">
+
+        <h2>SCIENCE LAB</h2>
+
+        <p>
+            Click around the lab to collect evidence.
+        </p>
+
+
+        <div class="lab">
+
+            <button onclick="showClue('footprints')">
+                👣<br>
+                Footprints
+            </button>
+
+            <button onclick="showClue('puddle')">
+                💧<br>
+                Water Puddle
+            </button>
+
+            <button onclick="showClue('window')">
+                🪟<br>
+                Open Window
+            </button>
+
+            <button onclick="showClue('beaker')">
+                🧪<br>
+                Broken Beaker
+            </button>
+
+        </div>
+
+
+        <div id="clue-box">
+            <h3>Evidence Notebook</h3>
+
+            <p id="clue-text">
+                No evidence collected yet.
+            </p>
+
+        </div>
+
+
+        <button onclick="makeConclusion()">
+            Make Investigation Report
+        </button>
+
+    </section>
+
+
+    <!-- Reasoning Reveal -->
+    <section id="reasoning-screen" class="screen">
+
+        <h2>Investigation Complete</h2>
+
+        <div class="case-box">
+
+            <p>
+                You collected clues and created the most likely explanation.
+            </p>
+
+            <h3>
+                You used:
+            </h3>
+
+            <h1>
+                INDUCTIVE REASONING
+            </h1>
+
+            <p>
+                Inductive reasoning starts with observations
+                and uses patterns to make a conclusion.
+            </p>
+
+            <p>
+                It is a strong explanation, but it is not guaranteed.
+            </p>
+
+        </div>
+
+
+        <button onclick="startDeduction()">
+            Try Deductive Reasoning
+        </button>
+
+    </section>
+
+
+
+    <!-- Deductive Challenge -->
+    <section id="deduction-screen" class="screen">
+
+        <h2>Deduction Challenge</h2>
+
+        <div class="case-box">
+
+            <p>
+                Detective Pixel gives you a rule:
+            </p>
+
+            <p>
+                <strong>
+                Anyone who enters the lab wearing muddy boots
+                leaves muddy footprints.
+                </strong>
+            </p>
+
+            <p>
+                Jordan entered wearing muddy boots.
+            </p>
+
+            <p>
+                What can you conclude?
+            </p>
+
+        </div>
+
+
+        <button onclick="deductionAnswer(true)">
+            Jordan left footprints
+        </button>
+
+        <button onclick="deductionAnswer(false)">
+            Jordan broke the beaker
+        </button>
+
+
+    </section>
+
+
+
+    <!-- Ending -->
+    <section id="ending-screen" class="screen">
+
+        <h1>🏆 CASE COMPLETE</h1>
+
+        <div class="case-box">
+
+            <h2>Detective Rank:</h2>
+
+            <h1>
+                Science Sleuth
+            </h1>
+
+            <p>
+                You learned:
+            </p>
+
+            <p>
+                🔍 Inductive Reasoning:
+                Evidence → Pattern → Explanation
+            </p>
+
+            <p>
+                📋 Deductive Reasoning:
+                Rule → Evidence → Conclusion
+            </p>
+
+        </div>
+
+    </section>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
