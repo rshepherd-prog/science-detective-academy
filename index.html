@@ -49,7 +49,7 @@ A valuable science lab beaker has shattered.
 
 <p>
 Your mission:
-Collect evidence, build an explanation, and discover the difference between two types of reasoning.
+Collect evidence and determine what happened.
 </p>
 
 </div>
@@ -66,8 +66,9 @@ START INVESTIGATION
 
 
 
-<!-- INTRO SCREEN -->
 
+
+<!-- INTRO SCREEN -->
 
 <section id="intro-screen" class="screen">
 
@@ -91,15 +92,13 @@ Welcome, rookie detective.
 
 A science lab accident has occurred.
 
-Your job is to investigate the evidence and determine what happened.
+Your job is to investigate the evidence.
 
 Remember:
 
 Observations are what we see.
 
-Explanations are what we think the evidence means.
-
-Good detectives know the difference.
+Inferences are explanations we create from evidence.
 
 </p>
 
@@ -123,8 +122,7 @@ ENTER THE LAB
 
 
 
-<!-- EVIDENCE BOARD -->
-
+<!-- INVESTIGATION SCREEN -->
 
 <section id="investigation-screen" class="screen">
 
@@ -187,7 +185,9 @@ onclick="showClue('paw')">
 
 
 
+
 <div id="clue-box">
+
 
 <h3>
 Detective Notebook
@@ -204,8 +204,9 @@ Click evidence on the board.
 </div>
 
 
-
 </div>
+
+
 
 
 
@@ -217,15 +218,7 @@ CREATE DETECTIVE REPORT
 
 
 </section>
-
-
-
-
-
-
-
-<!-- INDUCTIVE REPORT SCREEN -->
-
+<!-- REPORT SCREEN -->
 
 <section id="report-screen" class="screen">
 
@@ -239,24 +232,19 @@ DETECTIVE REPORT
 
 
 <p>
-
 You collected evidence.
-
-Now decide:
-
 </p>
 
 
 <h3>
-
 What probably happened?
-
 </h3>
+
 
 
 <button onclick="chooseExplanation('wind')">
 
-🌬️ Wind from the window knocked it over
+🌬️ Wind from the open window knocked over the beaker
 
 </button>
 
@@ -270,7 +258,7 @@ What probably happened?
 
 <button onclick="chooseExplanation('cat')">
 
-🐈 Professor Whiskers knocked it over
+🐈 Professor Whiskers knocked over the cart
 
 </button>
 
@@ -285,8 +273,10 @@ What probably happened?
 
 
 
-<!-- INDUCTIVE EXPLANATION -->
 
+
+
+<!-- INDUCTIVE SCREEN -->
 
 <section id="inductive-screen" class="screen">
 
@@ -306,14 +296,14 @@ INDUCTIVE REASONING
 
 <p>
 
-You looked at specific observations and created the most likely explanation.
+You used specific observations to create the most likely explanation.
 
 </p>
 
 
 <p>
 
-Evidence → Pattern → Explanation
+Specific Evidence → Pattern → Likely Explanation
 
 </p>
 
@@ -327,7 +317,6 @@ but it was not guaranteed.
 </p>
 
 
-
 <button onclick="showCatReveal()">
 
 VIEW NEW EVIDENCE
@@ -339,8 +328,15 @@ VIEW NEW EVIDENCE
 
 
 </section>
-<!-- CAT REVEAL SCREEN -->
 
+
+
+
+
+
+
+
+<!-- CAT REVEAL -->
 
 <section id="cat-screen" class="screen">
 
@@ -360,7 +356,7 @@ VIEW NEW EVIDENCE
 
 <p>
 
-Security camera footage reveals the truth!
+Security footage reveals the truth!
 
 </p>
 
@@ -369,7 +365,7 @@ Security camera footage reveals the truth!
 
 Professor Whiskers jumped onto the supply cart.
 
-The cart rolled into the lab table.
+The cart rolled into the table.
 
 The beaker fell and shattered.
 
@@ -378,18 +374,11 @@ The beaker fell and shattered.
 
 <p>
 
-Your original explanation made sense...
+Your explanation made sense...
 
 but new evidence changed the conclusion.
 
 </p>
-
-
-<h2>
-
-This is why inductive reasoning is not always certain.
-
-</h2>
 
 
 <button onclick="startDeduction()">
@@ -411,8 +400,7 @@ ENTER LOGIC LAB
 
 
 
-<!-- DEDUCTIVE REASONING SCREEN -->
-
+<!-- DEDUCTION SCREEN -->
 
 <section id="deduction-screen" class="screen">
 
@@ -427,17 +415,13 @@ ENTER LOGIC LAB
 
 <p>
 
-Now we solve mysteries differently.
-
-Instead of collecting clues, we start with rules.
+Now solve mysteries using rules.
 
 </p>
 
 
 <h3>
-
 Challenge 1
-
 </h3>
 
 
@@ -464,10 +448,9 @@ The beaker has mass.
 
 
 <p>
-
 What can you conclude?
-
 </p>
+
 
 
 <button onclick="deductionQuestion(true)">
@@ -480,7 +463,7 @@ The beaker is affected by gravity.
 
 <button onclick="deductionQuestion(false)">
 
-The beaker must have broken because of gravity.
+Gravity caused the beaker to break.
 
 </button>
 
@@ -498,8 +481,7 @@ The beaker must have broken because of gravity.
 
 
 
-<!-- DEDUCTIVE EXPLANATION -->
-
+<!-- DEDUCTIVE SCREEN -->
 
 <section id="deductive-screen" class="screen">
 
@@ -519,21 +501,14 @@ DEDUCTIVE REASONING
 
 <p>
 
-You started with a rule and applied it to a specific case.
+You started with a rule and applied it to a specific situation.
 
 </p>
 
 
 <p>
 
-Rule → Evidence → Conclusion
-
-</p>
-
-
-<p>
-
-When the rule is true and the evidence matches, the conclusion must follow.
+General Rule → Specific Evidence → Certain Conclusion
 
 </p>
 
@@ -546,7 +521,6 @@ COMPLETE CASE FILE
 </button>
 
 
-
 </div>
 
 
@@ -559,8 +533,7 @@ COMPLETE CASE FILE
 
 
 
-<!-- FINAL SCREEN -->
-
+<!-- END SCREEN -->
 
 <section id="ending-screen" class="screen">
 
@@ -568,7 +541,6 @@ COMPLETE CASE FILE
 <h1>
 🏆 CASE COMPLETE
 </h1>
-
 
 
 <div class="case-box">
@@ -579,14 +551,6 @@ Detective Report
 </h2>
 
 
-<p>
-
-You learned two ways scientists reason.
-
-</p>
-
-
-
 <h3>
 🔍 Inductive Reasoning
 </h3>
@@ -594,17 +558,16 @@ You learned two ways scientists reason.
 
 <p>
 
-Observations → Pattern → Likely Explanation
+Evidence → Pattern → Likely Explanation
 
 </p>
 
 
 <p>
 
-Used when we look for patterns and make predictions.
+Creates strong explanations, but conclusions are not guaranteed.
 
 </p>
-
 
 
 
@@ -615,23 +578,20 @@ Used when we look for patterns and make predictions.
 
 <p>
 
-Rule → Specific Evidence → Certain Conclusion
+Rule → Evidence → Conclusion
 
 </p>
 
 
 <p>
 
-Used when we apply known rules to specific situations.
+If the rule and evidence are true, the conclusion follows.
 
 </p>
 
 
-
 <h2>
-
 Rank: Science Sleuth 🕵️
-
 </h2>
 
 
@@ -639,6 +599,7 @@ Rank: Science Sleuth 🕵️
 
 
 </section>
+
 
 
 
