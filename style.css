@@ -362,3 +362,225 @@ button:hover {
     left: 320px !important;
     top: 220px !important;
 }
+
+/* TOP DOWN CLASSROOM */
+
+.classroom {
+
+position:relative;
+width:700px;
+height:450px;
+margin:auto;
+
+background:#d1d5db;
+
+border:8px solid #374151;
+
+border-radius:15px;
+
+overflow:hidden;
+
+}
+
+
+
+/* objects */
+
+.classroom-object {
+
+position:absolute;
+
+background:#f9fafb;
+
+border:3px solid #374151;
+
+border-radius:10px;
+
+padding:10px;
+
+text-align:center;
+
+font-size:14px;
+
+}
+
+
+.teacher-desk {
+
+top:20px;
+
+left:260px;
+
+width:150px;
+
+height:45px;
+
+}
+
+
+
+.table {
+
+width:70px;
+
+height:45px;
+
+}
+
+
+
+.table1 {
+
+top:150px;
+
+left:120px;
+
+}
+
+
+
+.table2 {
+
+top:150px;
+
+left:310px;
+
+}
+
+
+
+.table3 {
+
+top:150px;
+
+left:500px;
+
+}
+
+
+
+/* student desks */
+
+
+.student-desk {
+
+position:absolute;
+
+background:#9ca3af;
+
+border:2px solid #374151;
+
+width:45px;
+
+height:25px;
+
+}
+
+
+
+.desk1 {
+
+top:260px;
+
+left:150px;
+
+}
+
+
+.desk2 {
+
+top:260px;
+
+left:250px;
+
+}
+
+
+.desk3 {
+
+top:260px;
+
+left:350px;
+
+}
+
+
+.desk4 {
+
+top:330px;
+
+left:200px;
+
+}
+
+
+.desk5 {
+
+top:330px;
+
+left:400px;
+
+}
+
+
+
+/* clue locations */
+
+.hotspot {
+
+position:absolute;
+
+font-size:40px;
+
+cursor:pointer;
+
+transition:0.2s;
+
+}
+
+
+.hotspot:hover {
+
+transform:scale(1.3);
+
+}
+
+
+
+/* evidence placement */
+
+
+.footprints {
+
+top:220px;
+
+left:270px;
+
+}
+
+
+.beaker {
+
+top:130px;
+
+left:335px;
+
+}
+
+
+.window {
+
+top:40px;
+
+right:40px;
+
+}
+
+
+.paw {
+
+top:200px;
+
+right:160px;
+
+}
