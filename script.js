@@ -4,7 +4,7 @@
 
 let cluesFound = [];
 
-let deductionLevel = 1;
+let currentChallenge = 0;
 
 
 
@@ -28,6 +28,8 @@ function showScreen(screenID){
 
 
 
+
+
 // START GAME
 
 function startGame(){
@@ -35,6 +37,8 @@ function startGame(){
     showScreen("intro-screen");
 
 }
+
+
 
 
 
@@ -48,6 +52,8 @@ function beginInvestigation(){
 
 
 
+
+
 // EVIDENCE DATABASE
 
 const clues = {
@@ -55,11 +61,11 @@ const clues = {
 
 footprints: {
 
-title:"👣 Evidence #1: Muddy Footprints",
+    title:"👣 Evidence #1: Muddy Footprints",
 
-text:
+    text:
 
-"Specific evidence shows muddy footprints near the lab table."
+    "Muddy footprints appear near the lab table."
 
 },
 
@@ -67,11 +73,11 @@ text:
 
 beaker: {
 
-title:"🧪 Evidence #2: Broken Beaker",
+    title:"🧪 Evidence #2: Broken Beaker",
 
-text:
+    text:
 
-"A beaker has fallen and shattered."
+    "A glass beaker is shattered on the floor."
 
 },
 
@@ -79,11 +85,11 @@ text:
 
 window: {
 
-title:"🪟 Evidence #3: Open Window",
+    title:"🪟 Evidence #3: Open Window",
 
-text:
+    text:
 
-"The window is open and weather conditions may have affected the room."
+    "The classroom window is open during a storm."
 
 },
 
@@ -91,11 +97,11 @@ text:
 
 paw: {
 
-title:"🐾 Evidence #4: Tiny Paw Prints",
+    title:"🐾 Evidence #4: Tiny Paw Prints",
 
-text:
+    text:
 
-"Small paw prints are found near the equipment shelf."
+    "Small paw prints appear near the equipment shelf."
 
 }
 
@@ -106,9 +112,12 @@ text:
 
 
 
+
+
 // DISPLAY EVIDENCE
 
 function showClue(clueName){
+
 
     let clue = clues[clueName];
 
@@ -118,6 +127,7 @@ function showClue(clueName){
         cluesFound.push(clueName);
 
     }
+
 
 
     document.getElementById("clue-text").innerHTML =
@@ -137,7 +147,8 @@ function showClue(clueName){
 
 
 
-// MOVE TO INDUCTIVE REPORT
+
+// MOVE TO REASONING REPORT
 
 function makeConclusion(){
 
@@ -150,11 +161,10 @@ function makeConclusion(){
 
         "🕵️ Detective Pixel says:<br><br>" +
 
-        "Find at least three clues before creating your reasoning report.";
+        "Find at least three clues before creating your report.";
 
 
         return;
-
 
     }
 
@@ -171,7 +181,7 @@ function makeConclusion(){
 
 
 
-// STUDENT IDENTIFIES REASONING TYPE
+// INDUCTIVE REASONING CHECK
 
 function chooseReasoning(choice){
 
@@ -188,15 +198,15 @@ feedback.innerHTML =
 
 "✅ Correct!<br><br>" +
 
-"You used inductive reasoning because you started with specific evidence and created a likely explanation.<br><br>" +
+"You used inductive reasoning because you used specific evidence to create a likely explanation.<br><br>" +
 
-"Your conclusion was reasonable, but new evidence could change it.";
+"Your conclusion was reasonable, but it was not guaranteed.";
 
 
 
 setTimeout(function(){
 
-    showScreen("cat-screen");
+showScreen("cat-screen");
 
 },3000);
 
@@ -211,15 +221,16 @@ else{
 feedback.innerHTML =
 
 
-"❌ Not quite!<br><br>" +
+"❌ Not quite.<br><br>" +
 
-"Deductive reasoning starts with a rule and applies it to a specific situation.";
+"Deductive reasoning starts with a rule and applies it to a specific case.";
+
+
+}
 
 
 }
 
-
-}
 
 
 
@@ -231,7 +242,7 @@ feedback.innerHTML =
 
 function showCatReveal(){
 
-    showScreen("cat-screen");
+showScreen("cat-screen");
 
 }
 
@@ -241,24 +252,8 @@ function showCatReveal(){
 
 
 
-// START DEDUCTION
 
-function startDeduction(){
-
-    showScreen("deduction-screen");
-
-}
-
-
-
-
-
-
-
-// DEDUCTIVE REASONING CHALLENGES
-
-
-let currentChallenge = 0;
+// DEDUCTION LAB
 
 
 const deductionChallenges = [
@@ -270,11 +265,11 @@ title:"Challenge 1: Gravity",
 
 text:
 
-"RULE: All objects with mass are affected by gravity.<br><br>" +
+"<strong>RULE:</strong> All objects with mass are affected by gravity.<br><br>" +
 
-"FACT: The broken beaker has mass.<br><br>" +
+"<strong>FACT:</strong> The broken beaker has mass.<br><br>" +
 
-"What can you conclude?",
+"What conclusion can you make?",
 
 answers:[
 
@@ -284,7 +279,11 @@ answers:[
 
 ],
 
-correct:0
+correct:0,
+
+notebook:
+
+"Explain why this is deductive reasoning."
 
 },
 
@@ -296,11 +295,11 @@ title:"Challenge 2: Biology",
 
 text:
 
-"RULE: All living things need energy to survive.<br><br>" +
+"<strong>RULE:</strong> All living things need energy to survive.<br><br>" +
 
-"FACT: A squirrel is a living thing.<br><br>" +
+"<strong>FACT:</strong> A squirrel is living.<br><br>" +
 
-"What can you conclude?",
+"What conclusion can you make?",
 
 answers:[
 
@@ -310,7 +309,11 @@ answers:[
 
 ],
 
-correct:0
+correct:0,
+
+notebook:
+
+"Explain how you moved from a general rule to a specific conclusion."
 
 },
 
@@ -322,21 +325,25 @@ title:"Challenge 3: Chemistry",
 
 text:
 
-"RULE: Metals conduct electricity.<br><br>" +
+"<strong>RULE:</strong> Metals conduct electricity.<br><br>" +
 
-"FACT: Copper is a metal.<br><br>" +
+"<strong>FACT:</strong> Copper is a metal.<br><br>" +
 
-"What can you conclude?",
+"What conclusion can you make?",
 
 answers:[
 
 "Copper conducts electricity.",
 
-"Copper is the best conductor."
+"Copper is the strongest conductor."
 
 ],
 
-correct:0
+correct:0,
+
+notebook:
+
+"Why is this reasoning based on logic instead of guessing?"
 
 }
 
@@ -347,15 +354,23 @@ correct:0
 
 
 
+
+
 function startDeduction(){
+
 
 currentChallenge = 0;
 
+
 loadChallenge();
+
 
 showScreen("deduction-screen");
 
+
 }
+
+
 
 
 
@@ -375,21 +390,23 @@ document.getElementById("challenge-text").innerHTML =
 challenge.text;
 
 
-let buttons = document.querySelectorAll("#deduction-screen button");
+document.getElementById("answer-one").innerHTML =
+challenge.answers[0];
 
 
-buttons[0].innerHTML = challenge.answers[0];
-
-buttons[1].innerHTML = challenge.answers[1];
+document.getElementById("answer-two").innerHTML =
+challenge.answers[1];
 
 
 document.getElementById("logic-feedback").innerHTML="";
 
 
-document.getElementById("next-button").style.display="none";
+document.getElementById("notebook-box").style.display="none";
 
 
 }
+
+
 
 
 
@@ -406,10 +423,19 @@ if(answer === challenge.correct){
 
 document.getElementById("logic-feedback").innerHTML =
 
-"✅ Correct! You applied a general rule to a specific example. That is deductive reasoning.";
+
+"✅ Correct! You started with a rule and applied it to a specific example. This is deductive reasoning.";
 
 
-document.getElementById("next-button").style.display="block";
+
+document.getElementById("notebook-question").innerHTML =
+
+challenge.notebook;
+
+
+
+document.getElementById("notebook-box").style.display="block";
+
 
 
 }
@@ -419,7 +445,8 @@ else{
 
 document.getElementById("logic-feedback").innerHTML =
 
-"❌ Not quite. Deductive reasoning only allows conclusions directly supported by the rule.";
+
+"❌ Try again. Deductive reasoning starts with a general rule.";
 
 
 }
@@ -431,7 +458,9 @@ document.getElementById("logic-feedback").innerHTML =
 
 
 
-function nextChallenge(){
+
+
+function continueChallenge(){
 
 
 currentChallenge++;
@@ -461,7 +490,8 @@ showScreen("deductive-screen");
 
 
 
-// COMPLETE CASE
+
+// FINISH CASE
 
 function finishCase(){
 
