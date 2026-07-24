@@ -1,15 +1,18 @@
 // SCIENCE DETECTIVE ACADEMY
-// Case 001: The Broken Beaker
+// Case File 001: The Broken Beaker
 
 
 let cluesFound = [];
 
 
-// Switch between screens
+
+
+// SCREEN MANAGEMENT
 
 function showScreen(screenID){
 
     let screens = document.querySelectorAll(".screen");
+
 
     screens.forEach(screen => {
 
@@ -24,7 +27,8 @@ function showScreen(screenID){
 
 
 
-// Start the game
+
+// START GAME
 
 function startGame(){
 
@@ -34,7 +38,9 @@ function startGame(){
 
 
 
-// Move to evidence board
+
+
+// ENTER LAB
 
 function beginInvestigation(){
 
@@ -44,7 +50,12 @@ function beginInvestigation(){
 
 
 
-// Evidence database
+
+
+
+
+// EVIDENCE DATABASE
+
 
 const clues = {
 
@@ -56,15 +67,20 @@ const clues = {
         text:
 
         "<strong>Observation:</strong><br>" +
-        "Muddy footprints are found leading toward the lab table.<br><br>" +
+
+        "Muddy footprints lead toward the lab table.<br><br>" +
 
         "<strong>What we know:</strong><br>" +
-        "Someone or something with muddy feet was in this area.<br><br>" +
+
+        "Something with muddy feet was in the area.<br><br>" +
 
         "<strong>Possible inference:</strong><br>" +
-        "The person or animal that made these prints may have been near the beaker."
+
+        "Someone may have been near the beaker."
 
     },
+
+
 
 
 
@@ -75,15 +91,20 @@ const clues = {
         text:
 
         "<strong>Observation:</strong><br>" +
+
         "A glass beaker is shattered on the floor.<br><br>" +
 
         "<strong>What we know:</strong><br>" +
-        "The beaker broke, but we do not know what caused it.<br><br>" +
+
+        "The beaker broke, but we do not know why.<br><br>" +
 
         "<strong>Possible inference:</strong><br>" +
-        "Something may have caused the beaker to fall."
+
+        "Something caused the beaker to fall."
 
     },
+
+
 
 
 
@@ -94,15 +115,20 @@ const clues = {
         text:
 
         "<strong>Observation:</strong><br>" +
+
         "The classroom window is open and rain is visible outside.<br><br>" +
 
         "<strong>What we know:</strong><br>" +
+
         "Wind and water could enter the classroom.<br><br>" +
 
         "<strong>Possible inference:</strong><br>" +
-        "Weather may have influenced what happened."
+
+        "Weather may have affected the situation."
 
     },
+
+
 
 
 
@@ -113,12 +139,15 @@ const clues = {
         text:
 
         "<strong>Observation:</strong><br>" +
+
         "Small paw prints appear near the shelf.<br><br>" +
 
         "<strong>What we know:</strong><br>" +
+
         "The prints are smaller than a human shoe.<br><br>" +
 
         "<strong>Possible inference:</strong><br>" +
+
         "An animal may have been nearby."
 
     }
@@ -130,7 +159,11 @@ const clues = {
 
 
 
-// Show evidence when clicked
+
+
+
+// DISPLAY EVIDENCE
+
 
 function showClue(clueName){
 
@@ -140,13 +173,16 @@ function showClue(clueName){
 
     if(!cluesFound.includes(clueName)){
 
+
         cluesFound.push(clueName);
+
 
     }
 
 
 
     document.getElementById("clue-text").innerHTML =
+
 
         clue.title +
 
@@ -161,7 +197,12 @@ function showClue(clueName){
 
 
 
-// Submit investigation
+
+
+
+
+// MOVE TO REPORT
+
 
 function makeConclusion(){
 
@@ -171,18 +212,20 @@ function makeConclusion(){
 
         document.getElementById("clue-text").innerHTML =
 
+
         "🕵️ Detective Pixel says:<br><br>" +
 
-        "A good detective collects enough evidence before making a conclusion! Find at least 3 clues.";
+        "Collect at least three pieces of evidence before writing your report.";
 
 
         return;
+
 
     }
 
 
 
-    showScreen("reasoning-screen");
+    showScreen("report-screen");
 
 
 }
@@ -192,11 +235,55 @@ function makeConclusion(){
 
 
 
-// Deductive reasoning section
+
+
+
+// STUDENT CHOOSES EXPLANATION
+
+
+function chooseExplanation(choice){
+
+
+    showScreen("inductive-screen");
+
+
+}
+
+
+
+
+
+
+
+
+
+// CAT REVEAL
+
+
+function showCatReveal(){
+
+
+    showScreen("cat-screen");
+
+
+}
+
+
+
+
+
+
+
+
+
+// START DEDUCTION
+
 
 function startDeduction(){
 
+
     showScreen("deduction-screen");
+
 
 }
 
@@ -205,30 +292,60 @@ function startDeduction(){
 
 
 
-function deductionAnswer(correct){
+
+
+
+// DEDUCTION QUESTION
+
+
+function deductionQuestion(correct){
+
 
 
     if(correct){
 
 
-        showScreen("ending-screen");
+        showScreen("deductive-screen");
 
 
     }
+
 
     else{
 
 
         alert(
 
-        "Not quite, detective! A conclusion must match the rule provided.\n\n" +
+        "Not quite, detective!\n\n" +
 
-        "The evidence only proves the beaker fell. It does not prove someone broke it intentionally."
+        "Deductive reasoning applies the rule exactly.\n\n" +
+
+        "The rule tells us the beaker is affected by gravity, not why it broke."
 
         );
 
 
     }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+// COMPLETE CASE
+
+
+function finishCase(){
+
+
+    showScreen("ending-screen");
 
 
 }
