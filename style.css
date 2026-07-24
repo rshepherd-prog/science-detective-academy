@@ -435,3 +435,16 @@ button:active {
     top:220px;
 
 }
+
+/* New Investigation Screens */
+
+#report-screen.active,
+#inductive-screen.active,
+#cat-screen.active,
+#deduction-screen.active,
+#deductive-screen.active,
+#ending-screen.active {
+
+    display:block;
+
+}
