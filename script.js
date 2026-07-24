@@ -5,7 +5,7 @@
 let cluesFound = [];
 
 
-// Switch screens
+// Switch between screens
 
 function showScreen(screenID){
 
@@ -24,7 +24,7 @@ function showScreen(screenID){
 
 
 
-// Start Game
+// Start the game
 
 function startGame(){
 
@@ -34,13 +34,14 @@ function startGame(){
 
 
 
-// Begin Investigation
+// Move to evidence board
 
 function beginInvestigation(){
 
     showScreen("investigation-screen");
 
 }
+
 
 
 // Evidence database
@@ -50,53 +51,86 @@ const clues = {
 
     footprints: {
 
-        title:"👣 Muddy Footprints",
+        title:"👣 Evidence #1: Muddy Footprints",
 
         text:
-        "Observation: Muddy footprints lead from the doorway toward the lab table.\n\n" +
-        "Possible idea: Someone who was outside may have entered the room."
+
+        "<strong>Observation:</strong><br>" +
+        "Muddy footprints are found leading toward the lab table.<br><br>" +
+
+        "<strong>What we know:</strong><br>" +
+        "Someone or something with muddy feet was in this area.<br><br>" +
+
+        "<strong>Possible inference:</strong><br>" +
+        "The person or animal that made these prints may have been near the beaker."
 
     },
 
-
-    puddle: {
-
-        title:"💧 Water Puddle",
-
-        text:
-        "Observation: A small puddle of water is near the broken beaker.\n\n" +
-        "Possible idea: The water may have caused someone to slip."
-
-    },
-
-
-    window: {
-
-        title:"🪟 Open Window",
-
-        text:
-        "Observation: The classroom window is open.\n\n" +
-        "Possible idea: Rain or wind could have entered the room."
-
-    },
 
 
     beaker: {
 
-        title:"🧪 Broken Beaker",
+        title:"🧪 Evidence #2: Broken Beaker",
 
         text:
-        "Observation: The glass beaker shattered on the floor.\n\n" +
-        "Possible idea: Someone may have knocked it over."
+
+        "<strong>Observation:</strong><br>" +
+        "A glass beaker is shattered on the floor.<br><br>" +
+
+        "<strong>What we know:</strong><br>" +
+        "The beaker broke, but we do not know what caused it.<br><br>" +
+
+        "<strong>Possible inference:</strong><br>" +
+        "Something may have caused the beaker to fall."
+
+    },
+
+
+
+    window: {
+
+        title:"🪟 Evidence #3: Open Window",
+
+        text:
+
+        "<strong>Observation:</strong><br>" +
+        "The classroom window is open and rain is visible outside.<br><br>" +
+
+        "<strong>What we know:</strong><br>" +
+        "Wind and water could enter the classroom.<br><br>" +
+
+        "<strong>Possible inference:</strong><br>" +
+        "Weather may have influenced what happened."
+
+    },
+
+
+
+    paw: {
+
+        title:"🐾 Evidence #4: Tiny Paw Prints",
+
+        text:
+
+        "<strong>Observation:</strong><br>" +
+        "Small paw prints appear near the shelf.<br><br>" +
+
+        "<strong>What we know:</strong><br>" +
+        "The prints are smaller than a human shoe.<br><br>" +
+
+        "<strong>Possible inference:</strong><br>" +
+        "An animal may have been nearby."
 
     }
+
 
 };
 
 
 
 
-// Show clue
+
+// Show evidence when clicked
 
 function showClue(clueName){
 
@@ -111,35 +145,41 @@ function showClue(clueName){
     }
 
 
+
     document.getElementById("clue-text").innerHTML =
 
-        "<strong>" +
         clue.title +
-        "</strong><br><br>" +
 
-        clue.text.replace(/\n/g,"<br>");
+        "<br><br>" +
+
+        clue.text;
+
 
 
 }
 
 
 
-// Make conclusion
+
+// Submit investigation
 
 function makeConclusion(){
 
 
     if(cluesFound.length < 3){
 
+
         document.getElementById("clue-text").innerHTML =
 
-        "Detective Pixel says:<br><br>" +
+        "🕵️ Detective Pixel says:<br><br>" +
 
-        "Hold on, rookie! A good detective collects more evidence before making a conclusion.";
+        "A good detective collects enough evidence before making a conclusion! Find at least 3 clues.";
+
 
         return;
 
     }
+
 
 
     showScreen("reasoning-screen");
@@ -149,7 +189,10 @@ function makeConclusion(){
 
 
 
-// Deductive reasoning
+
+
+
+// Deductive reasoning section
 
 function startDeduction(){
 
@@ -160,12 +203,16 @@ function startDeduction(){
 
 
 
+
+
 function deductionAnswer(correct){
 
 
     if(correct){
 
+
         showScreen("ending-screen");
+
 
     }
 
@@ -174,11 +221,9 @@ function deductionAnswer(correct){
 
         alert(
 
-        "Not quite!\n\n" +
+        "Not quite, detective! A conclusion must match the rule provided.\n\n" +
 
-        "The evidence only proves Jordan left footprints.\n\n" +
-
-        "It does NOT prove Jordan broke the beaker."
+        "The evidence only proves the beaker fell. It does not prove someone broke it intentionally."
 
         );
 
