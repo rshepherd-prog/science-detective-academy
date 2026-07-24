@@ -182,9 +182,7 @@ showScreen("report-screen");
 
 function chooseExplanation(choice){
 
-    studentExplanation = choice;
-
-    showScreen("inductive-screen");
+    alert("Button clicked: " + choice);
 
 }
 
