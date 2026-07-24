@@ -405,13 +405,7 @@ ENTER LOGIC LAB
 </section>
 
 
-
-
-
-
-
-
-<!-- DEDUCTIVE SCREEN -->
+<!-- DEDUCTION LAB -->
 
 <section id="deduction-screen" class="screen">
 
@@ -424,59 +418,38 @@ ENTER LOGIC LAB
 <div class="case-box">
 
 
-<p>
-
-Now solve problems using rules instead of clues.
-
-</p>
-
-
-
-<h3>
+<h3 id="challenge-title">
 Challenge 1
 </h3>
 
 
-
-<p>
-
-<strong>
-RULE:
-</strong>
-
-All objects with mass are affected by gravity.
+<p id="challenge-text">
 
 </p>
 
 
-<p>
+<button onclick="deductionAnswer(0)">
 
-<strong>
-FACT:
-</strong>
-
-The beaker has mass.
-
-</p>
-
-
-<p>
-What can you conclude?
-</p>
-
-
-
-<button onclick="deductionQuestion(true)">
-
-The beaker is affected by gravity.
+Answer A
 
 </button>
 
 
+<button onclick="deductionAnswer(1)">
 
-<button onclick="deductionQuestion(false)">
+Answer B
 
-Gravity caused the beaker to break.
+</button>
+
+
+<p id="logic-feedback">
+
+</p>
+
+
+<button id="next-button" onclick="nextChallenge()" style="display:none;">
+
+NEXT CHALLENGE
 
 </button>
 
@@ -485,9 +458,6 @@ Gravity caused the beaker to break.
 
 
 </section>
-
-
-
 
 
 
