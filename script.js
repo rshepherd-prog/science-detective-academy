@@ -4,6 +4,7 @@
 
 let cluesFound = [];
 
+let deductionLevel = 1;
 
 
 
@@ -27,7 +28,6 @@ function showScreen(screenID){
 
 
 
-
 // START GAME
 
 function startGame(){
@@ -35,8 +35,6 @@ function startGame(){
     showScreen("intro-screen");
 
 }
-
-
 
 
 
@@ -50,107 +48,56 @@ function beginInvestigation(){
 
 
 
-
-
-
-
 // EVIDENCE DATABASE
-
 
 const clues = {
 
 
-    footprints: {
+footprints: {
 
-        title:"👣 Evidence #1: Muddy Footprints",
+title:"👣 Evidence #1: Muddy Footprints",
 
-        text:
+text:
 
-        "<strong>Observation:</strong><br>" +
+"Specific evidence shows muddy footprints near the lab table."
 
-        "Muddy footprints lead toward the lab table.<br><br>" +
-
-        "<strong>What we know:</strong><br>" +
-
-        "Something with muddy feet was in the area.<br><br>" +
-
-        "<strong>Possible inference:</strong><br>" +
-
-        "Someone may have been near the beaker."
-
-    },
+},
 
 
 
+beaker: {
 
+title:"🧪 Evidence #2: Broken Beaker",
 
-    beaker: {
+text:
 
-        title:"🧪 Evidence #2: Broken Beaker",
+"A beaker has fallen and shattered."
 
-        text:
-
-        "<strong>Observation:</strong><br>" +
-
-        "A glass beaker is shattered on the floor.<br><br>" +
-
-        "<strong>What we know:</strong><br>" +
-
-        "The beaker broke, but we do not know why.<br><br>" +
-
-        "<strong>Possible inference:</strong><br>" +
-
-        "Something caused the beaker to fall."
-
-    },
+},
 
 
 
+window: {
 
+title:"🪟 Evidence #3: Open Window",
 
-    window: {
+text:
 
-        title:"🪟 Evidence #3: Open Window",
+"The window is open and weather conditions may have affected the room."
 
-        text:
-
-        "<strong>Observation:</strong><br>" +
-
-        "The classroom window is open and rain is visible outside.<br><br>" +
-
-        "<strong>What we know:</strong><br>" +
-
-        "Wind and water could enter the classroom.<br><br>" +
-
-        "<strong>Possible inference:</strong><br>" +
-
-        "Weather may have affected the situation."
-
-    },
+},
 
 
 
+paw: {
 
+title:"🐾 Evidence #4: Tiny Paw Prints",
 
-    paw: {
+text:
 
-        title:"🐾 Evidence #4: Tiny Paw Prints",
+"Small paw prints are found near the equipment shelf."
 
-        text:
-
-        "<strong>Observation:</strong><br>" +
-
-        "Small paw prints appear near the shelf.<br><br>" +
-
-        "<strong>What we know:</strong><br>" +
-
-        "The prints are smaller than a human shoe.<br><br>" +
-
-        "<strong>Possible inference:</strong><br>" +
-
-        "An animal may have been nearby."
-
-    }
+}
 
 
 };
@@ -159,37 +106,27 @@ const clues = {
 
 
 
-
-
-
 // DISPLAY EVIDENCE
 
-
 function showClue(clueName){
-
 
     let clue = clues[clueName];
 
 
     if(!cluesFound.includes(clueName)){
 
-
         cluesFound.push(clueName);
-
 
     }
 
 
-
     document.getElementById("clue-text").innerHTML =
 
+    clue.title +
 
-        clue.title +
+    "<br><br>" +
 
-        "<br><br>" +
-
-        clue.text;
-
+    clue.text;
 
 
 }
@@ -200,9 +137,7 @@ function showClue(clueName){
 
 
 
-
-// MOVE TO REPORT
-
+// MOVE TO INDUCTIVE REPORT
 
 function makeConclusion(){
 
@@ -215,7 +150,7 @@ function makeConclusion(){
 
         "🕵️ Detective Pixel says:<br><br>" +
 
-        "Collect at least three pieces of evidence before writing your report.";
+        "Find at least three clues before creating your reasoning report.";
 
 
         return;
@@ -236,20 +171,55 @@ function makeConclusion(){
 
 
 
+// STUDENT IDENTIFIES REASONING TYPE
+
+function chooseReasoning(choice){
 
 
-// STUDENT CHOOSES EXPLANATION
+let feedback = document.getElementById("reasoning-feedback");
 
 
-function chooseExplanation(choice){
+
+if(choice === "inductive"){
 
 
-    showScreen("inductive-screen");
+feedback.innerHTML =
+
+
+"✅ Correct!<br><br>" +
+
+"You used inductive reasoning because you started with specific evidence and created a likely explanation.<br><br>" +
+
+"Your conclusion was reasonable, but new evidence could change it.";
+
+
+
+setTimeout(function(){
+
+    showScreen("cat-screen");
+
+},3000);
+
 
 
 }
 
 
+else{
+
+
+feedback.innerHTML =
+
+
+"❌ Not quite!<br><br>" +
+
+"Deductive reasoning starts with a rule and applies it to a specific situation.";
+
+
+}
+
+
+}
 
 
 
@@ -259,16 +229,11 @@ function chooseExplanation(choice){
 
 // CAT REVEAL
 
-
 function showCatReveal(){
-
 
     showScreen("cat-screen");
 
-
 }
-
-
 
 
 
@@ -278,13 +243,10 @@ function showCatReveal(){
 
 // START DEDUCTION
 
-
 function startDeduction(){
-
 
     showScreen("deduction-screen");
 
-
 }
 
 
@@ -293,44 +255,45 @@ function startDeduction(){
 
 
 
+// DEDUCTIVE REASONING CHALLENGES
 
 
-// DEDUCTION QUESTION
+function checkDeduction(correct){
 
 
-function deductionQuestion(correct){
+let feedback = document.getElementById("logic-feedback");
 
 
 
-    if(correct){
+if(correct){
 
 
-        showScreen("deductive-screen");
+feedback.innerHTML =
 
+"✅ Correct!<br><br>" +
 
-    }
-
-
-    else{
-
-
-        alert(
-
-        "Not quite, detective!\n\n" +
-
-        "Deductive reasoning applies the rule exactly.\n\n" +
-
-        "The rule tells us the beaker is affected by gravity, not why it broke."
-
-        );
-
-
-    }
+"You started with a general rule and applied it to a specific example. This is deductive reasoning.";
 
 
 
 }
 
+
+else{
+
+
+feedback.innerHTML =
+
+"❌ Not quite.<br><br>" +
+
+"Deductive reasoning only allows conclusions supported by the rule.";
+
+
+}
+
+
+
+}
 
 
 
@@ -341,11 +304,10 @@ function deductionQuestion(correct){
 
 // COMPLETE CASE
 
-
 function finishCase(){
 
 
-    showScreen("ending-screen");
+showScreen("ending-screen");
 
 
 }
