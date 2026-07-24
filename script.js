@@ -500,3 +500,11 @@ showScreen("ending-screen");
 
 
 }
+
+// OLD BUTTON COMPATIBILITY FIX
+
+function chooseExplanation(choice){
+
+    chooseReasoning("inductive");
+
+}
