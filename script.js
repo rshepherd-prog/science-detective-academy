@@ -182,18 +182,9 @@ showScreen("report-screen");
 
 function chooseExplanation(choice){
 
+    studentExplanation = choice;
 
-studentExplanation = choice;
-
-
-let reasoningBox = document.getElementById("reasoning-check");
-
-
-if(reasoningBox){
-
-
-reasoningBox.style.display = "block";
-
+    showScreen("inductive-screen");
 
 }
 
