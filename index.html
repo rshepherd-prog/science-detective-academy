@@ -4,10 +4,11 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>
-Science Detective Academy: Case 001
+Science Detective Academy
 </title>
 
 <link rel="stylesheet" href="style.css">
@@ -26,37 +27,34 @@ Science Detective Academy: Case 001
 
 <section id="title-screen" class="screen active">
 
+
 <h1>
 SCIENCE DETECTIVE ACADEMY
 </h1>
 
+
 <h2>
-CASE FILE 001
+CASE FILE 001: THE BROKEN BEAKER
 </h2>
 
 
 <div class="case-box">
 
-<h3>
-🧪 THE BROKEN BEAKER
-</h3>
-
-
 <p>
 A valuable science lab beaker has shattered.
 </p>
 
-
 <p>
-Your mission:
-Collect evidence and determine what happened.
+Your mission is to investigate the evidence and determine what happened.
 </p>
 
 </div>
 
 
 <button onclick="startGame()">
+
 START INVESTIGATION
+
 </button>
 
 
@@ -74,12 +72,13 @@ START INVESTIGATION
 
 
 <div class="detective">
+
 🕵️
+
 </div>
 
 
-<div class="dialogue">
-
+<div class="case-box">
 
 <h3>
 Detective Pixel
@@ -88,20 +87,24 @@ Detective Pixel
 
 <p>
 
-Welcome, rookie detective.
+Welcome, rookie detective!
 
-A science lab accident has occurred.
+<br><br>
 
-Your job is to investigate the evidence.
+Before solving a mystery, scientists collect observations.
 
 Remember:
 
-Observations are what we see.
+<br><br>
 
-Inferences are explanations we create from evidence.
+<strong>
+Observation = what we notice.
+
+<br>
+Inference = explanation based on evidence.
+</strong>
 
 </p>
-
 
 
 <button onclick="beginInvestigation()">
@@ -134,9 +137,9 @@ SCIENCE LAB EVIDENCE BOARD
 
 <p>
 
-Click evidence to collect observations.
+Click the evidence to collect clues.
 
-Do not jump to conclusions yet!
+Do not make a conclusion yet!
 
 </p>
 
@@ -148,12 +151,14 @@ Do not jump to conclusions yet!
 <div class="scene">
 
 
+
 <div class="hotspot footprints"
 onclick="showClue('footprints')">
 
 👣
 
 </div>
+
 
 
 <div class="hotspot beaker"
@@ -164,12 +169,14 @@ onclick="showClue('beaker')">
 </div>
 
 
+
 <div class="hotspot window"
 onclick="showClue('window')">
 
 🪟
 
 </div>
+
 
 
 <div class="hotspot paw"
@@ -185,7 +192,6 @@ onclick="showClue('paw')">
 
 
 
-
 <div id="clue-box">
 
 
@@ -196,7 +202,7 @@ Detective Notebook
 
 <p id="clue-text">
 
-Click evidence on the board.
+Click an object to investigate.
 
 </p>
 
@@ -232,36 +238,37 @@ DETECTIVE REPORT
 
 
 <p>
-You collected evidence.
+You collected evidence from the scene.
 </p>
 
 
 <h3>
-What probably happened?
+What is your explanation?
 </h3>
 
 
 
 <button onclick="chooseExplanation('wind')">
 
-🌬️ Wind from the open window knocked over the beaker
+🌬️ The open window caused the accident
 
 </button>
+
 
 
 <button onclick="chooseExplanation('student')">
 
-👟 A student accidentally bumped the table
+👟 A student bumped the table
 
 </button>
+
 
 
 <button onclick="chooseExplanation('cat')">
 
-🐈 Professor Whiskers knocked over the cart
+🐈 Professor Whiskers knocked it over
 
 </button>
-
 
 
 </div>
@@ -276,7 +283,7 @@ What probably happened?
 
 
 
-<!-- INDUCTIVE SCREEN -->
+<!-- INDUCTIVE REASONING -->
 
 <section id="inductive-screen" class="screen">
 
@@ -296,14 +303,16 @@ INDUCTIVE REASONING
 
 <p>
 
-You used specific observations to create the most likely explanation.
+You looked at specific evidence and created the most likely explanation.
 
 </p>
 
 
 <p>
 
-Specific Evidence → Pattern → Likely Explanation
+<strong>
+Evidence → Pattern → Likely Explanation
+</strong>
 
 </p>
 
@@ -317,9 +326,10 @@ but it was not guaranteed.
 </p>
 
 
+
 <button onclick="showCatReveal()">
 
-VIEW NEW EVIDENCE
+DISCOVER NEW EVIDENCE
 
 </button>
 
@@ -356,7 +366,7 @@ VIEW NEW EVIDENCE
 
 <p>
 
-Security footage reveals the truth!
+Security footage reveals what really happened!
 
 </p>
 
@@ -374,11 +384,12 @@ The beaker fell and shattered.
 
 <p>
 
-Your explanation made sense...
+Your explanation was based on evidence...
 
 but new evidence changed the conclusion.
 
 </p>
+
 
 
 <button onclick="startDeduction()">
@@ -400,7 +411,7 @@ ENTER LOGIC LAB
 
 
 
-<!-- DEDUCTION SCREEN -->
+<!-- DEDUCTIVE SCREEN -->
 
 <section id="deduction-screen" class="screen">
 
@@ -415,14 +426,16 @@ ENTER LOGIC LAB
 
 <p>
 
-Now solve mysteries using rules.
+Now solve problems using rules instead of clues.
 
 </p>
+
 
 
 <h3>
 Challenge 1
 </h3>
+
 
 
 <p>
@@ -468,7 +481,6 @@ Gravity caused the beaker to break.
 </button>
 
 
-
 </div>
 
 
@@ -481,22 +493,17 @@ Gravity caused the beaker to break.
 
 
 
-<!-- DEDUCTIVE SCREEN -->
+<!-- DEDUCTIVE EXPLANATION -->
 
 <section id="deductive-screen" class="screen">
 
 
 <h2>
-DETECTIVE SKILL UNLOCKED
+DEDUCTIVE REASONING
 </h2>
 
 
 <div class="case-box">
-
-
-<h1>
-DEDUCTIVE REASONING
-</h1>
 
 
 <p>
@@ -508,7 +515,9 @@ You started with a rule and applied it to a specific situation.
 
 <p>
 
-General Rule → Specific Evidence → Certain Conclusion
+<strong>
+Rule → Evidence → Certain Conclusion
+</strong>
 
 </p>
 
@@ -533,7 +542,7 @@ COMPLETE CASE FILE
 
 
 
-<!-- END SCREEN -->
+<!-- ENDING SCREEN -->
 
 <section id="ending-screen" class="screen">
 
@@ -547,8 +556,9 @@ COMPLETE CASE FILE
 
 
 <h2>
-Detective Report
+Science Detective Report
 </h2>
+
 
 
 <h3>
@@ -558,14 +568,7 @@ Detective Report
 
 <p>
 
-Evidence → Pattern → Likely Explanation
-
-</p>
-
-
-<p>
-
-Creates strong explanations, but conclusions are not guaranteed.
+Specific observations are used to create a likely explanation.
 
 </p>
 
@@ -578,20 +581,14 @@ Creates strong explanations, but conclusions are not guaranteed.
 
 <p>
 
-Rule → Evidence → Conclusion
-
-</p>
-
-
-<p>
-
-If the rule and evidence are true, the conclusion follows.
+A rule is applied to a specific situation to reach a conclusion.
 
 </p>
 
 
 <h2>
 Rank: Science Sleuth 🕵️
+
 </h2>
 
 
@@ -599,8 +596,6 @@ Rank: Science Sleuth 🕵️
 
 
 </section>
-
-
 
 
 
@@ -617,5 +612,3 @@ Rank: Science Sleuth 🕵️
 </body>
 
 </html>
-
-console.log("Game loaded");
