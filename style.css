@@ -1,226 +1,161 @@
-/* SCIENCE DETECTIVE ACADEMY
-   Case 001: The Broken Beaker
-   Retro Pixel Style
-*/
+/* SCIENCE DETECTIVE ACADEMY */
+/* Retro Pixel Detective Theme */
 
 
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
+/* GENERAL */
 
 body {
-    margin: 0;
-    background-color: #111827;
-    color: #f9fafb;
-    font-family: 'Press Start 2P', monospace;
-    min-height: 100vh;
+
+    background:#111827;
+
+    color:white;
+
+    font-family:"Courier New", monospace;
+
+    text-align:center;
+
+    margin:0;
+
+    padding:20px;
+
 }
+
 
 
 #game {
-    width: 90%;
-    max-width: 900px;
-    margin: 40px auto;
-    text-align: center;
+
+    max-width:900px;
+
+    margin:auto;
+
 }
 
 
-/* Screens */
+
+
+/* SCREENS */
 
 .screen {
-    display: none;
-    animation: fadeIn 0.5s;
+
+    display:none;
+
 }
 
 
 .screen.active {
-    display: block;
+
+    display:block;
+
 }
 
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 
-/* Headers */
+
+/* TEXT */
 
 h1 {
-    color: #facc15;
-    font-size: 32px;
-    line-height: 1.5;
+
+    color:#facc15;
+
+    font-size:45px;
+
 }
 
 
 h2 {
-    color: #c084fc;
+
+    color:#c084fc;
+
 }
 
 
 h3 {
-    color: #60a5fa;
-}
 
-
-/* Boxes */
-
-.case-box,
-.dialogue,
-#clue-box {
-
-    background-color: #1f2937;
-
-    border: 5px solid #c084fc;
-
-    padding: 25px;
-
-    margin: 25px auto;
-
-    max-width: 650px;
-
-    box-shadow:
-        8px 8px 0px #000;
+    color:#facc15;
 
 }
 
 
-.dialogue {
-
-    border-color: #facc15;
-
-}
 
 
-/* Detective */
 
-.detective {
+/* BUTTONS */
 
-    font-size: 80px;
-
-    margin: 20px;
-
-}
-
-
-/* Buttons */
 
 button {
 
-    font-family: 'Press Start 2P', monospace;
+    background:#7c3aed;
 
-    background-color: #7c3aed;
+    color:white;
 
-    color: white;
+    border:3px solid #facc15;
 
-    border: 4px solid #facc15;
+    padding:15px 25px;
 
-    padding: 18px;
+    margin:10px;
 
-    margin: 10px;
+    font-size:18px;
 
-    cursor: pointer;
+    font-family:inherit;
 
-    font-size: 14px;
+    cursor:pointer;
 
-    box-shadow:
-        5px 5px 0px #000;
+    box-shadow:5px 5px 0px black;
 
 }
 
 
 button:hover {
 
-    background-color: #9333ea;
+    background:#a855f7;
 
-    transform: translateY(-3px);
-
-}
-
-
-button:active {
-
-    box-shadow: none;
-
-    transform: translateY(5px);
+    transform:translateY(-3px);
 
 }
 
 
 
-/* Lab Area */
 
 
-.lab {
-
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 20px;
-
-    margin: 30px auto;
-
-    max-width: 600px;
-
-}
+/* CASE BOX */
 
 
-.lab button {
+.case-box {
 
-    background-color:
+    background:#1f2937;
 
-    #374151;
+    border:4px solid #c084fc;
 
-    height: 120px;
+    padding:25px;
 
-    font-size: 12px;
+    margin:25px auto;
+
+    max-width:650px;
+
+    box-shadow:8px 8px 0px black;
 
 }
 
 
-/* Evidence text */
-
-#clue-text {
-
-    line-height: 2;
-
-    color: #d1d5db;
-
-}
 
 
-/* Mobile */
 
-@media(max-width:700px){
+/* DETECTIVE */
 
-    h1 {
-        font-size:20px;
-    }
+.detective {
 
+    font-size:80px;
 
-    .lab {
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    button {
-
-        font-size:10px;
-
-    }
+    margin:20px;
 
 }
 
-/* Evidence Board */
+
+
+
+
+/* EVIDENCE BOARD */
 
 
 .evidence-board {
@@ -243,33 +178,27 @@ button:active {
 
     height:400px;
 
-    background:
-
-    linear-gradient(
-        135deg,
-        #374151,
-        #111827
-    );
+    background:#374151;
 
     border:8px solid #facc15;
 
-    box-shadow:
-    10px 10px 0px black;
+    box-shadow:10px 10px 0px black;
 
-    margin:20px;
+    margin:25px auto;
 
 }
 
 
 
-/* Evidence hotspots */
+
+/* Evidence Icons */
 
 
 .hotspot {
 
     position:absolute;
 
-    font-size:45px;
+    font-size:50px;
 
     cursor:pointer;
 
@@ -294,112 +223,6 @@ button:active {
 
 
 
-/* Position evidence */
-
-.footprints {
-
-    left:80px;
-
-    bottom:70px;
-
-}
-
-
-.beaker {
-
-    right:150px;
-
-    bottom:90px;
-
-}
-
-
-.window {
-
-    right:80px;
-
-    top:40px;
-
-}
-
-
-.paw {
-
-    left:300px;
-
-    top:220px;
-
-}
-
-/* TEMP TEST */
-
-#investigation-screen.active {
-
-    display:block;
-
-}
-/* Evidence Board Investigation */
-
-.evidence-board {
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-
-}
-
-
-.scene {
-
-    position:relative;
-
-    width:700px;
-
-    height:400px;
-
-    background-color:#374151;
-
-    border:8px solid #facc15;
-
-    box-shadow:10px 10px 0px black;
-
-    margin:25px auto;
-
-}
-
-
-/* Evidence Hotspots */
-
-.hotspot {
-
-    position:absolute;
-
-    font-size:50px;
-
-    cursor:pointer;
-
-    padding:10px;
-
-    background:#1f2937;
-
-    border:3px solid #c084fc;
-
-    transition:0.2s;
-
-}
-
-
-.hotspot:hover {
-
-    transform:scale(1.2);
-
-    background:#7c3aed;
-
-}
-
-
-/* Evidence locations */
-
 
 .footprints {
 
@@ -408,6 +231,7 @@ button:active {
     bottom:80px;
 
 }
+
 
 
 .beaker {
@@ -419,6 +243,7 @@ button:active {
 }
 
 
+
 .window {
 
     right:80px;
@@ -426,6 +251,7 @@ button:active {
     top:50px;
 
 }
+
 
 
 .paw {
@@ -436,22 +262,77 @@ button:active {
 
 }
 
-/* New Investigation Screens */
 
-#report-screen.active,
-#inductive-screen.active,
-#cat-screen.active,
-#deduction-screen.active,
-#deductive-screen.active,
-#ending-screen.active {
 
-    display:block;
+
+/* NOTEBOOK */
+
+
+#clue-box {
+
+    background:#111827;
+
+    border:3px solid #facc15;
+
+    padding:20px;
+
+    max-width:650px;
+
+    min-height:150px;
 
 }
 
-#report-screen {
+
+
+
+
+/* REPORT CHOICES */
+
+
+#report-screen button {
 
     display:block;
-    color:white;
+
+    margin:15px auto;
+
+    width:70%;
+
+}
+
+
+
+
+
+/* LOGIC LAB */
+
+
+#deduction-screen button {
+
+    display:block;
+
+    margin:15px auto;
+
+    width:70%;
+
+}
+
+
+
+
+
+/* MOBILE */
+
+@media(max-width:750px){
+
+
+.scene {
+
+    width:90%;
+
+    height:350px;
+
+}
+
+
 
 }
