@@ -16,7 +16,6 @@ function showScreen(screenID){
 
     let screens = document.querySelectorAll(".screen");
 
-
     screens.forEach(screen => {
 
         screen.classList.remove("active");
@@ -24,9 +23,17 @@ function showScreen(screenID){
     });
 
 
-    document.getElementById(screenID).classList.add("active");
+    let target = document.getElementById(screenID);
+
+    if(target){
+
+        target.classList.add("active");
+
+    }
 
 }
+
+
 
 
 
@@ -40,6 +47,8 @@ function startGame(){
 
 
 
+
+
 // ENTER LAB
 
 function beginInvestigation(){
@@ -47,6 +56,8 @@ function beginInvestigation(){
     showScreen("investigation-screen");
 
 }
+
+
 
 
 
@@ -59,9 +70,7 @@ footprints: {
 
 title:"👣 Evidence #1: Muddy Footprints",
 
-text:
-
-"Muddy footprints lead toward the lab table."
+text:"Muddy footprints lead toward the lab table."
 
 },
 
@@ -71,9 +80,7 @@ beaker: {
 
 title:"🧪 Evidence #2: Broken Beaker",
 
-text:
-
-"A glass beaker is shattered on the floor."
+text:"A glass beaker is shattered on the floor."
 
 },
 
@@ -83,9 +90,7 @@ window: {
 
 title:"🪟 Evidence #3: Open Window",
 
-text:
-
-"The classroom window is open during a storm."
+text:"The classroom window is open during a storm."
 
 },
 
@@ -95,9 +100,7 @@ paw: {
 
 title:"🐾 Evidence #4: Tiny Paw Prints",
 
-text:
-
-"Small paw prints appear near the equipment shelf."
+text:"Small paw prints appear near the equipment shelf."
 
 }
 
@@ -108,7 +111,9 @@ text:
 
 
 
-// DISPLAY EVIDENCE
+
+
+// DISPLAY CLUE
 
 function showClue(clueName){
 
@@ -123,7 +128,6 @@ cluesFound.push(clueName);
 }
 
 
-
 document.getElementById("clue-text").innerHTML =
 
 clue.title +
@@ -134,6 +138,8 @@ clue.text;
 
 
 }
+
+
 
 
 
@@ -156,7 +162,6 @@ document.getElementById("clue-text").innerHTML =
 
 return;
 
-
 }
 
 
@@ -170,6 +175,9 @@ showScreen("report-screen");
 
 
 
+
+
+
 // STUDENT CHOOSES WHAT HAPPENED
 
 function chooseExplanation(choice){
@@ -178,18 +186,38 @@ function chooseExplanation(choice){
 studentExplanation = choice;
 
 
-
 let reasoningBox = document.getElementById("reasoning-check");
 
 
 if(reasoningBox){
 
+
 reasoningBox.style.display = "block";
 
+
 }
 
 
+
+let message = document.getElementById("reasoning-feedback");
+
+
+if(message){
+
+
+message.innerHTML =
+
+"Good detective work! Now identify the type of reasoning you used.";
+
+
 }
+
+
+
+}
+
+
+
 
 
 
@@ -211,9 +239,9 @@ feedback.innerHTML =
 
 "✅ Correct!<br><br>" +
 
-"You used inductive reasoning because you started with specific evidence and created a likely explanation.<br><br>" +
+"You used inductive reasoning because you started with specific evidence and created a possible explanation.<br><br>" +
 
-"Your explanation might be correct, but it is not guaranteed.";
+"Your conclusion is likely, but it is not guaranteed.";
 
 
 
@@ -235,13 +263,14 @@ feedback.innerHTML =
 
 "❌ Not quite!<br><br>" +
 
-"You did not start with a rule. You started with evidence and created an explanation, which is inductive reasoning.";
+"You started with evidence and created an explanation. That is inductive reasoning, not deductive reasoning.";
 
 
 }
 
 
 }
+
 
 
 
@@ -261,11 +290,12 @@ showScreen("cat-screen");
 
 
 
+
+
 // DEDUCTION LAB
 
 
 const deductionChallenges = [
-
 
 {
 
@@ -275,7 +305,7 @@ text:
 
 "<strong>RULE:</strong> All objects with mass are affected by gravity.<br><br>" +
 
-"<strong>FACT:</strong> The broken beaker has mass.<br><br>" +
+"<strong>FACT:</strong> The beaker has mass.<br><br>" +
 
 "What can you conclude?",
 
@@ -289,9 +319,7 @@ answers:[
 
 correct:0,
 
-notebook:
-
-"Why is this deductive reasoning?"
+notebook:"Explain why this is deductive reasoning."
 
 },
 
@@ -303,7 +331,7 @@ title:"Challenge 2: Biology",
 
 text:
 
-"<strong>RULE:</strong> All living things need energy to survive.<br><br>" +
+"<strong>RULE:</strong> All living things need energy.<br><br>" +
 
 "<strong>FACT:</strong> A squirrel is living.<br><br>" +
 
@@ -311,7 +339,7 @@ text:
 
 answers:[
 
-"The squirrel needs energy to survive.",
+"The squirrel needs energy.",
 
 "The squirrel eats the same food as every animal."
 
@@ -319,9 +347,7 @@ answers:[
 
 correct:0,
 
-notebook:
-
-"How did you move from a general rule to a specific conclusion?"
+notebook:"How did you move from a general rule to a specific conclusion?"
 
 },
 
@@ -349,12 +375,9 @@ answers:[
 
 correct:0,
 
-notebook:
-
-"Why is this logic instead of a guess?"
+notebook:"Why is this logic instead of guessing?"
 
 }
-
 
 ];
 
@@ -362,19 +385,19 @@ notebook:
 
 
 
-function startDeduction(){
 
+
+function startDeduction(){
 
 currentChallenge = 0;
 
-
 loadChallenge();
-
 
 showScreen("deduction-screen");
 
-
 }
+
+
 
 
 
@@ -414,6 +437,8 @@ document.getElementById("notebook-box").style.display="none";
 
 
 
+
+
 function deductionAnswer(answer){
 
 
@@ -428,11 +453,7 @@ document.getElementById("logic-feedback").innerHTML =
 "✅ Correct! You started with a general rule and applied it to a specific example. This is deductive reasoning.";
 
 
-
-document.getElementById("notebook-question").innerHTML =
-
-challenge.notebook;
-
+document.getElementById("notebook-question").innerHTML = challenge.notebook;
 
 
 document.getElementById("notebook-box").style.display="block";
@@ -446,13 +467,15 @@ else{
 
 document.getElementById("logic-feedback").innerHTML =
 
-"❌ Try again. Deductive reasoning begins with a general rule.";
+"❌ Try again. Deductive reasoning starts with a general rule.";
 
 
 }
 
 
 }
+
+
 
 
 
@@ -466,18 +489,14 @@ currentChallenge++;
 
 if(currentChallenge < deductionChallenges.length){
 
-
 loadChallenge();
-
 
 }
 
 else{
 
-
 showScreen("deductive-screen");
 
-
 }
 
 
@@ -487,7 +506,9 @@ showScreen("deductive-screen");
 
 
 
-// FINISH CASE
+
+
+// FINISH
 
 function finishCase(){
 
