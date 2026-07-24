@@ -328,3 +328,37 @@ button:hover {
 
 
 }
+/* Evidence placement fixes */
+
+.scene {
+    position: relative;
+}
+
+
+.hotspot {
+    position: absolute !important;
+}
+
+
+.hotspot.footprints {
+    left: 60px !important;
+    bottom: 60px !important;
+}
+
+
+.hotspot.beaker {
+    right: 180px !important;
+    bottom: 80px !important;
+}
+
+
+.hotspot.window {
+    right: 60px !important;
+    top: 40px !important;
+}
+
+
+.hotspot.paw {
+    left: 320px !important;
+    top: 220px !important;
+}
