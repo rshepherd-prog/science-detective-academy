@@ -258,44 +258,203 @@ function startDeduction(){
 // DEDUCTIVE REASONING CHALLENGES
 
 
-function checkDeduction(correct){
+let currentChallenge = 0;
 
 
-let feedback = document.getElementById("logic-feedback");
+const deductionChallenges = [
+
+
+{
+
+title:"Challenge 1: Gravity",
+
+text:
+
+"RULE: All objects with mass are affected by gravity.<br><br>" +
+
+"FACT: The broken beaker has mass.<br><br>" +
+
+"What can you conclude?",
+
+answers:[
+
+"The beaker is affected by gravity.",
+
+"Gravity caused the beaker to break."
+
+],
+
+correct:0
+
+},
 
 
 
-if(correct){
+{
+
+title:"Challenge 2: Biology",
+
+text:
+
+"RULE: All living things need energy to survive.<br><br>" +
+
+"FACT: A squirrel is a living thing.<br><br>" +
+
+"What can you conclude?",
+
+answers:[
+
+"The squirrel needs energy to survive.",
+
+"The squirrel eats the same food as every animal."
+
+],
+
+correct:0
+
+},
 
 
-feedback.innerHTML =
 
-"✅ Correct!<br><br>" +
+{
 
-"You started with a general rule and applied it to a specific example. This is deductive reasoning.";
+title:"Challenge 3: Chemistry",
 
+text:
+
+"RULE: Metals conduct electricity.<br><br>" +
+
+"FACT: Copper is a metal.<br><br>" +
+
+"What can you conclude?",
+
+answers:[
+
+"Copper conducts electricity.",
+
+"Copper is the best conductor."
+
+],
+
+correct:0
+
+}
+
+
+];
+
+
+
+
+
+function startDeduction(){
+
+currentChallenge = 0;
+
+loadChallenge();
+
+showScreen("deduction-screen");
+
+}
+
+
+
+
+
+function loadChallenge(){
+
+
+let challenge = deductionChallenges[currentChallenge];
+
+
+document.getElementById("challenge-title").innerHTML =
+challenge.title;
+
+
+document.getElementById("challenge-text").innerHTML =
+challenge.text;
+
+
+let buttons = document.querySelectorAll("#deduction-screen button");
+
+
+buttons[0].innerHTML = challenge.answers[0];
+
+buttons[1].innerHTML = challenge.answers[1];
+
+
+document.getElementById("logic-feedback").innerHTML="";
+
+
+document.getElementById("next-button").style.display="none";
 
 
 }
 
+
+
+
+
+function deductionAnswer(answer){
+
+
+let challenge = deductionChallenges[currentChallenge];
+
+
+if(answer === challenge.correct){
+
+
+document.getElementById("logic-feedback").innerHTML =
+
+"✅ Correct! You applied a general rule to a specific example. That is deductive reasoning.";
+
+
+document.getElementById("next-button").style.display="block";
+
+
+}
 
 else{
 
 
-feedback.innerHTML =
+document.getElementById("logic-feedback").innerHTML =
 
-"❌ Not quite.<br><br>" +
+"❌ Not quite. Deductive reasoning only allows conclusions directly supported by the rule.";
 
-"Deductive reasoning only allows conclusions supported by the rule.";
+
+}
 
 
 }
 
 
 
+
+
+function nextChallenge(){
+
+
+currentChallenge++;
+
+
+if(currentChallenge < deductionChallenges.length){
+
+
+loadChallenge();
+
+
+}
+
+else{
+
+
+showScreen("deductive-screen");
+
+
 }
 
 
+}
 
 
 
