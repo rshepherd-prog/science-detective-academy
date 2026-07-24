@@ -1,6 +1,5 @@
 // SCIENCE DETECTIVE ACADEMY
 // Case 001: The Broken Beaker
-// Game Logic
 
 
 let cluesFound = [];
@@ -13,7 +12,9 @@ function showScreen(screenID){
     let screens = document.querySelectorAll(".screen");
 
     screens.forEach(screen => {
+
         screen.classList.remove("active");
+
     });
 
 
@@ -33,14 +34,13 @@ function startGame(){
 
 
 
-// Begin investigation
+// Begin Investigation
 
 function beginInvestigation(){
 
     showScreen("investigation-screen");
 
 }
-
 
 
 // Evidence database
